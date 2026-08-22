@@ -25,18 +25,18 @@ async function render() {
   );
 }
 
-test("server-renders the personal field notes site", async () => {
+test("server-renders Qi Hao's personal corner", async () => {
   const response = await render();
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<title>Qi Hao Liang — Field Notes<\/title>/i);
-  assert.match(html, /A life,/);
-  assert.match(html, /slowly noticed\./);
-  assert.match(html, /From the diary/);
-  assert.match(html, /Photographs/);
-  assert.match(html, /Hello, I’m Qi Hao\./);
+  assert.match(html, /<title>Qi Hao — a little corner of the internet<\/title>/i);
+  assert.match(html, /just keeping track of/);
+  assert.match(html, /life as it happens\./);
+  assert.match(html, /recent diary stuff/);
+  assert.match(html, /some photos i like/);
+  assert.match(html, /why this exists/);
   assert.match(html, /https:\/\/field-notes\.example\/og\.png/);
   assert.doesNotMatch(html, /codex-preview|SkeletonPreview|react-loading-skeleton/);
 });
@@ -55,7 +55,7 @@ test("keeps the finished site accessible and starter-free", async () => {
   assert.match(layout, /generateMetadata/);
   assert.match(layout, /summary_large_image/);
   assert.match(css, /prefers-reduced-motion:\s*reduce/);
-  assert.match(css, /@media \(max-width: 680px\)/);
+  assert.match(css, /@media \(max-width: 640px\)/);
   assert.match(packageJson, /"build:pages"/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
   assert.doesNotMatch(page, /_sites-preview|codex-preview/);

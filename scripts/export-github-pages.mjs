@@ -68,9 +68,9 @@ function makeStaticDocument(document) {
     .replaceAll('href="/_next/', 'href="./_next/')
     .replaceAll('src="/_next/', 'src="./_next/');
 
-  const title = "Qi Hao Liang — Field Notes";
+  const title = "Qi Hao — a little corner of the internet";
   const description =
-    "A personal archive of diary entries, photographs, and ordinary moments worth remembering.";
+    "Diary entries, photos, and little things from life lately.";
   const siteUrl = publicSiteUrl();
   const socialImage = siteUrl ? `${siteUrl}og.png` : "./og.png";
   const canonical = siteUrl

@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { headers } from "next/headers";
 import "./globals.css";
 
-const title = "Qi Hao Liang — Field Notes";
+const title = "Qi Hao — a little corner of the internet";
 const description =
-  "A personal archive of diary entries, photographs, and ordinary moments worth remembering.";
+  "Diary entries, photos, and little things from life lately.";
 
 export async function generateMetadata(): Promise<Metadata> {
   const requestHeaders = await headers();
@@ -30,7 +30,7 @@ export async function generateMetadata(): Promise<Metadata> {
           url: socialImage,
           width: 1731,
           height: 909,
-          alt: "Qi Hao Liang — Field Notes",
+          alt: "Qi Hao’s little corner — diary, photos, and life lately",
         },
       ],
     },
