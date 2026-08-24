@@ -88,7 +88,7 @@ export default function Home() {
 
       <header className="site-header" id="top">
         <a className="brand" href="#top" aria-label="Qi Hao, home">
-          qh<span>.</span>
+          <span>「</span>qh<span>.</span><span>」</span>
         </a>
         <nav aria-label="Main navigation">
           <a href="#posts">posts</a>

@@ -32,6 +32,8 @@ test("server-renders Qi Hao's personal corner", async () => {
 
   const html = await response.text();
   assert.match(html, /<title>Qi Hao — a little corner of the internet<\/title>/i);
+  assert.match(html, /「/);
+  assert.match(html, /」/);
   assert.match(html, /just keeping track of/);
   assert.match(html, /life as it happens\./);
   assert.match(html, /id="top"/);
@@ -74,6 +76,8 @@ test("gives each photograph its own shareable story page", async () => {
     assert.equal(response.status, 200);
     const html = await response.text();
     assert.match(html, /behind the scene/);
+    assert.match(html, /「/);
+    assert.match(html, /」/);
     assert.match(html, /the story is coming/);
     assert.match(html, /class="next-photo" href="\.\//);
     assert.doesNotMatch(html, /og\.png/);

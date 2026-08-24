@@ -66,7 +66,7 @@ export default async function PhotoPage({ params }: PhotoPageProps) {
     <div className="photo-story-shell">
       <header className="photo-story-header">
         <a className="brand" href="../../" aria-label="Qihao, home">
-          qh<span>.</span>
+          <span>「</span>qh<span>.</span><span>」</span>
         </a>
         <a href="../../#photos">← all photos</a>
       </header>
