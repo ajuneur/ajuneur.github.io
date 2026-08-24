@@ -7,9 +7,53 @@ export type Post = {
   tag: string;
   note: string;
   body: Array<string | null>;
+  images?: Array<{
+    src: string;
+    alt: string;
+    caption: string;
+  }>;
 };
 
 export const posts: Post[] = [
+  {
+    slug: "the-ring-i-bought-for-free-delivery",
+    date: "24 Aug 2026",
+    title: "The ring I bought for free delivery",
+    excerpt:
+      "I only added it to reach the free-delivery minimum. Somehow, the cheapest thing in the order became my favourite.",
+    description:
+      "A cheap flower ring bought to reach a free-delivery minimum turned out to be an unexpectedly good accidental purchase.",
+    tag: "small delight",
+    note: "an accidental purchase that deserved a tiny photoshoot.",
+    body: [
+      "I did not set out to buy a ring. I was simply trying to reach the minimum for free delivery, which is how online shopping persuades you to spend more money in order to feel like you have saved some.",
+      "The ring was cheap, and at the time it was mostly there to complete the arithmetic of my cart. I did not expect much from it. It was just a large flower, a little dramatic, and useful enough to push the order over the line.",
+      "Then it arrived, and I tried it on. The pearly petals and gold centre looked much better on my hand than I had imagined. It is not subtle at all, but perhaps that is why I like it—it makes even sitting at a table or typing on my laptop feel slightly more dressed up.",
+      "So the item I almost did not buy, bought for a reason that had almost nothing to do with wanting it, has somehow become the thing I keep looking at. Cheap, accidental, and a bit ridiculous—but I think it looks good on me!",
+    ],
+    images: [
+      {
+        src: "/posts/new-ring/portrait-with-ring.jpg",
+        alt: "Qihao sitting beside a large window with a flower ring visible on his hand",
+        caption: "trying on the accidental addition to the order.",
+      },
+      {
+        src: "/posts/new-ring/ring-close-up.jpg",
+        alt: "Close-up of a large pearly flower ring with a gold centre on Qihao's hand",
+        caption: "the ring in full, unapologetically floral detail.",
+      },
+      {
+        src: "/posts/new-ring/portrait-at-the-window.jpg",
+        alt: "Qihao resting his ringed hand beside his face at a table by a green view",
+        caption: "apparently it also works as part of a pose hahaha.",
+      },
+      {
+        src: "/posts/new-ring/ring-at-the-desk.jpg",
+        alt: "The flower ring on Qihao's hand while using a laptop",
+        caption: "making ordinary laptop time slightly more dramatic.",
+      },
+    ],
+  },
   {
     slug: "the-chapel-and-the-cliff",
     date: "18 Apr 2026",

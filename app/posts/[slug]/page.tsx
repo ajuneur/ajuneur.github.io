@@ -33,6 +33,14 @@ export async function generateMetadata({
   const requestHeaders = await headers();
   const metadataBase = metadataBaseFromHeaders(requestHeaders);
   const title = `${post.title} — Qihao`;
+  const socialImage = post.images?.[0]
+    ? [
+        {
+          url: new URL(post.images[0].src, metadataBase).toString(),
+          alt: post.images[0].alt,
+        },
+      ]
+    : [];
 
   return {
     metadataBase,
@@ -42,13 +50,13 @@ export async function generateMetadata({
       type: "article",
       title,
       description: post.description,
-      images: [],
+      images: socialImage,
     },
     twitter: {
       card: "summary",
       title,
       description: post.description,
-      images: [],
+      images: socialImage,
     },
   };
 }
@@ -80,6 +88,21 @@ export default async function PostPage({ params }: PostPageProps) {
           <h1>{post.title}</h1>
           <p>{post.description}</p>
         </header>
+
+        {post.images ? (
+          <div className="post-image-gallery" aria-label="Photos from this post">
+            {post.images.map((image, index) => (
+              <figure key={image.src}>
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  loading={index === 0 ? "eager" : "lazy"}
+                />
+                <figcaption>{image.caption}</figcaption>
+              </figure>
+            ))}
+          </div>
+        ) : null}
 
         <article className="post-article">
           <p className="post-note">{post.note}</p>

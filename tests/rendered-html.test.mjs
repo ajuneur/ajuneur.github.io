@@ -178,6 +178,30 @@ test("publishes the mall-hopping weekend as its own post", async () => {
   assert.doesNotMatch(html, /og\.png/);
 });
 
+test("publishes the accidental ring as a photo post", async () => {
+  const response = await render("/posts/the-ring-i-bought-for-free-delivery");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(
+    html,
+    /<title>The ring I bought for free delivery — Qihao<\/title>/i,
+  );
+  assert.match(html, /24 Aug 2026/);
+  assert.match(html, /reach the minimum for free delivery/);
+  assert.match(html, /I think it looks good on me!/i);
+  assert.match(html, /class="post-image-gallery"/);
+  assert.match(html, /portrait-with-ring\.jpg/);
+  assert.match(html, /ring-close-up\.jpg/);
+  assert.match(html, /portrait-at-the-window\.jpg/);
+  assert.match(html, /ring-at-the-desk\.jpg/);
+  assert.match(
+    html,
+    /https:\/\/field-notes\.example\/posts\/new-ring\/portrait-with-ring\.jpg/,
+  );
+  assert.doesNotMatch(html, /https:\/\/field-notes\.example\/og\.png/);
+});
+
 test("keeps the finished site accessible and starter-free", async () => {
   const [page, layout, css, packageJson] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
