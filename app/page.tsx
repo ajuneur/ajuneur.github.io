@@ -264,6 +264,16 @@ export default function Home() {
             <p className="pronunciation">
               pronounced <strong>Chee Hao</strong> — “Chee” as in cheese.
             </p>
+            <figure className="about-portrait">
+              <img
+                src="./qihao-portrait.jpg"
+                alt="Qihao smiling over a plate of sushi at a restaurant"
+                width="909"
+                height="1200"
+                loading="lazy"
+              />
+              <figcaption>hi, this is me.</figcaption>
+            </figure>
           </div>
           <div className="about-copy">
             <p>

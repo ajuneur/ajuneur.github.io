@@ -48,6 +48,8 @@ test("server-renders Qi Hao's personal corner", async () => {
   assert.match(html, /\.\/paintings\/painting-09\.jpg/);
   assert.match(html, /hey, i’m qihao\./);
   assert.match(html, /Chee Hao/);
+  assert.match(html, /\.\/qihao-portrait\.jpg/);
+  assert.match(html, /hi, this is me\./);
   assert.match(html, /books &amp; marginal notes/);
   assert.match(html, /making little bits of music/);
   assert.match(html, /https:\/\/www\.instagram\.com\/ajuneur\//);
@@ -104,6 +106,7 @@ test("keeps the finished site accessible and starter-free", async () => {
 
   await assert.rejects(access(new URL("../app/_sites-preview", import.meta.url)));
   await access(new URL("../public/og.png", import.meta.url));
+  await access(new URL("../public/qihao-portrait.jpg", import.meta.url));
   await access(new URL("../.github/workflows/deploy-pages.yml", import.meta.url));
   await access(root);
 });
