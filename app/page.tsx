@@ -1,3 +1,5 @@
+import { photographs } from "./photo-data";
+
 const diaryEntries = [
   {
     date: "18 Aug 2026",
@@ -22,33 +24,12 @@ const diaryEntries = [
   },
 ];
 
-const photographs = [
-  {
-    src: "./photos/haji-lane.jpg",
-    alt: "A lively narrow street in Haji Lane, Singapore",
-    caption: "haji lane, after rain",
-  },
-  {
-    src: "./photos/journal.jpg",
-    alt: "A notebook and coffee on a quiet desk",
-    caption: "a blank page, finally",
-  },
-  {
-    src: "./photos/light-drawing-figure.jpg",
-    alt: "A glowing continuous-line figure drawn with light against a dark night landscape",
-    caption: "drawing with light, after dark",
-  },
-  {
-    src: "./photos/light-drawing-face.jpg",
-    alt: "A glowing abstract face drawn with light against a dark night landscape",
-    caption: "a face made in one line",
-  },
-];
-
 const paintings = [
   {
     src: "./paintings/painting-01.jpg",
     alt: "A colourful painting of layered leaves and branching forms",
+    title: "Seasons",
+    story: "I collected leaves from four different seasons; I painted the background and stuck real leaves on top of the background",
   },
   {
     src: "./paintings/painting-02.jpg",
@@ -191,9 +172,22 @@ export default function Home() {
 
           <div className="photo-grid">
             {photographs.map((photo) => (
-              <figure key={photo.src}>
-                <img src={photo.src} alt={photo.alt} loading="lazy" />
-                <figcaption>{photo.caption}</figcaption>
+              <figure key={photo.slug}>
+                <a
+                  className="photo-link"
+                  href={`./photos/${photo.slug}`}
+                  aria-label={`View ${photo.title} and its story`}
+                >
+                  <img
+                    src={`./photos/${photo.image}`}
+                    alt={photo.alt}
+                    loading="lazy"
+                  />
+                  <figcaption>
+                    {photo.title}
+                    <span aria-hidden="true">story ↗</span>
+                  </figcaption>
+                </a>
               </figure>
             ))}
           </div>
@@ -319,12 +313,7 @@ export default function Home() {
 
       <footer>
         <p>made quietly in singapore · 2026</p>
-        <details>
-          <summary>sample photo credits</summary>
-          <p>
-            Carson Arias, Kelly Sikkema, and SnapSaga via Unsplash.
-          </p>
-        </details>
+        <p className="footer-note">photos &amp; artwork by qihao</p>
         <a href="#top">back to top ↑</a>
       </footer>
     </div>

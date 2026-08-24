@@ -1,6 +1,7 @@
 import { spawn } from "node:child_process";
 import { cp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { photographs } from "../app/photo-data.ts";
 
 const root = process.cwd();
 const outputDir = path.join(root, "github-pages");
@@ -32,12 +33,12 @@ function escapeAttribute(value) {
     .replaceAll("<", "&lt;");
 }
 
-async function waitForPage() {
+async function waitForPage(pathname = "/") {
   let lastError;
 
   for (let attempt = 0; attempt < 80; attempt += 1) {
     try {
-      const response = await fetch(origin, {
+      const response = await fetch(`${origin}${pathname}`, {
         headers: { accept: "text/html" },
       });
       if (response.ok) return response.text();
@@ -51,7 +52,7 @@ async function waitForPage() {
   throw lastError ?? new Error("Production preview did not start");
 }
 
-function makeStaticDocument(document) {
+function makeStaticDocument(document, page) {
   const head = document.match(/<head>([\s\S]*?)<\/head>/)?.[1] ?? "";
   const body = document.match(/<body>([\s\S]*?)<\/body>/)?.[1] ?? "";
   const visibleBody = body.split('<div hidden="">', 1)[0];
@@ -59,34 +60,34 @@ function makeStaticDocument(document) {
   const cleanHead = head
     .replace(/<script[\s\S]*?<\/script>/g, "")
     .replace(/<link[^>]+rel="modulepreload"[^>]*>/g, "")
-    .replaceAll('href="/_next/', 'href="./_next/')
-    .replaceAll('src="/_next/', 'src="./_next/');
+    .replaceAll('href="/_next/', `href="${page.assetPrefix}_next/`)
+    .replaceAll('src="/_next/', `src="${page.assetPrefix}_next/`);
 
   const cleanBody = visibleBody
     .replace(/<script[\s\S]*?<\/script>/g, "")
     .replace(/<!--[\s\S]*?-->/g, "")
-    .replaceAll('href="/_next/', 'href="./_next/')
-    .replaceAll('src="/_next/', 'src="./_next/');
+    .replaceAll('href="/_next/', `href="${page.assetPrefix}_next/`)
+    .replaceAll('src="/_next/', `src="${page.assetPrefix}_next/`);
 
-  const title = "Qi Hao — a little corner of the internet";
-  const description =
-    "Diary entries, photos, and little things from life lately.";
   const siteUrl = publicSiteUrl();
-  const socialImage = siteUrl ? `${siteUrl}og.png` : "./og.png";
-  const canonical = siteUrl
-    ? `<link rel="canonical" href="${escapeAttribute(siteUrl)}">`
+  const socialImage = siteUrl
+    ? `${siteUrl}${page.socialImage}`
+    : `${page.assetPrefix}${page.socialImage}`;
+  const canonicalUrl = siteUrl ? `${siteUrl}${page.canonicalPath}` : null;
+  const canonical = canonicalUrl
+    ? `<link rel="canonical" href="${escapeAttribute(canonicalUrl)}">`
     : "";
+  const title = escapeAttribute(page.title);
+  const description = escapeAttribute(page.description);
 
   const metadata = `
     <title>${title}</title>
     <meta name="description" content="${description}">
     ${canonical}
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="${page.type}">
     <meta property="og:title" content="${title}">
     <meta property="og:description" content="${description}">
     <meta property="og:image" content="${escapeAttribute(socialImage)}">
-    <meta property="og:image:width" content="1731">
-    <meta property="og:image:height" content="909">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${title}">
     <meta name="twitter:description" content="${description}">
@@ -117,13 +118,36 @@ server.stderr.on("data", (chunk) => {
 
 try {
   const rendered = await waitForPage();
-  const staticDocument = makeStaticDocument(rendered);
+  const staticDocument = makeStaticDocument(rendered, {
+    title: "Qi Hao — a little corner of the internet",
+    description: "Diary entries, photos, and little things from life lately.",
+    socialImage: "og.png",
+    canonicalPath: "",
+    type: "website",
+    assetPrefix: "./",
+  });
 
   await rm(outputDir, { recursive: true, force: true });
   await mkdir(outputDir, { recursive: true });
   await cp(path.join(root, "dist", "client"), outputDir, { recursive: true });
   await writeFile(path.join(outputDir, "index.html"), staticDocument);
   await writeFile(path.join(outputDir, ".nojekyll"), "");
+
+  for (const photograph of photographs) {
+    const pageDir = path.join(outputDir, "photos", photograph.slug);
+    const photoPage = await waitForPage(`/photos/${photograph.slug}`);
+    const photoDocument = makeStaticDocument(photoPage, {
+      title: `${photograph.title} — Qihao`,
+      description: photograph.description,
+      socialImage: `photos/${photograph.image}`,
+      canonicalPath: `photos/${photograph.slug}/`,
+      type: "article",
+      assetPrefix: "../../",
+    });
+
+    await mkdir(pageDir, { recursive: true });
+    await writeFile(path.join(pageDir, "index.html"), photoDocument);
+  }
 
   const cssManifest = JSON.parse(
     await readFile(path.join(outputDir, ".vite", "manifest.json"), "utf8"),
@@ -132,7 +156,9 @@ try {
     throw new Error("Static asset manifest is empty");
   }
 
-  console.log(`GitHub Pages package created at ${outputDir}`);
+  console.log(
+    `GitHub Pages package created at ${outputDir} with ${photographs.length} photo stories`,
+  );
 } catch (error) {
   if (serverErrors) process.stderr.write(serverErrors);
   throw error;

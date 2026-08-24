@@ -4,13 +4,13 @@ import test from "node:test";
 
 const root = new URL("../", import.meta.url);
 
-async function render() {
+async function render(pathname = "/") {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
   workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
   const { default: worker } = await import(workerUrl.href);
 
   return worker.fetch(
-    new Request("https://field-notes.example/", {
+    new Request(`https://field-notes.example${pathname}`, {
       headers: { accept: "text/html", host: "field-notes.example" },
     }),
     {
@@ -39,6 +39,7 @@ test("server-renders Qi Hao's personal corner", async () => {
   assert.match(html, /\.\/photos\/light-drawing-figure\.jpg/);
   assert.match(html, /\.\/photos\/light-drawing-face\.jpg/);
   assert.doesNotMatch(html, /\.\/photos\/(?:garden|flowers)\.jpg/);
+  assert.match(html, /\.\/photos\/drawing-with-light-after-dark/);
   assert.match(html, /things i’ve painted/);
   assert.match(html, /painting\s*(?:<!-- -->)?09/);
   assert.match(html, /title coming soon/);
@@ -51,6 +52,33 @@ test("server-renders Qi Hao's personal corner", async () => {
   assert.match(html, /https:\/\/sg\.linkedin\.com\/in\/qihao-liang-3a17ba249/);
   assert.match(html, /https:\/\/field-notes\.example\/og\.png/);
   assert.doesNotMatch(html, /codex-preview|SkeletonPreview|react-loading-skeleton/);
+});
+
+test("gives each photograph its own shareable story page", async () => {
+  const [streetResponse, lightResponse] = await Promise.all([
+    render("/photos/haji-lane-after-rain"),
+    render("/photos/drawing-with-light-after-dark"),
+  ]);
+
+  for (const response of [streetResponse, lightResponse]) {
+    assert.equal(response.status, 200);
+    const html = await response.text();
+    assert.match(html, /behind the scene/);
+    assert.match(html, /the story is coming/);
+    assert.match(html, /class="next-photo" href="\.\//);
+    assert.doesNotMatch(html, /og\.png/);
+  }
+
+  const streetHtml = await (await render("/photos/haji-lane-after-rain")).text();
+  assert.match(streetHtml, /<title>haji lane, after rain — Qihao<\/title>/i);
+  assert.match(
+    streetHtml,
+    /A street scene I wanted to keep: colour, quiet, and the softened light after rain\./,
+  );
+  assert.match(
+    streetHtml,
+    /https:\/\/field-notes\.example\/photos\/haji-lane\.jpg/,
+  );
 });
 
 test("keeps the finished site accessible and starter-free", async () => {
