@@ -4,7 +4,7 @@ import "./globals.css";
 
 const title = "Qi Hao — a little corner of the internet";
 const description =
-  "Diary entries, photos, and little things from life lately.";
+  "Posts, photos, and little things from life lately.";
 
 export async function generateMetadata(): Promise<Metadata> {
   const requestHeaders = await headers();
@@ -30,7 +30,7 @@ export async function generateMetadata(): Promise<Metadata> {
           url: socialImage,
           width: 1731,
           height: 909,
-          alt: "Qi Hao’s little corner — diary, photos, and life lately",
+          alt: "Qi Hao’s little corner — posts, photos, and life lately",
         },
       ],
     },

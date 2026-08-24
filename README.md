@@ -1,12 +1,12 @@
 # Field Notes
 
-A warm, editorial personal website for diary entries, life notes, and
+A warm, editorial personal website for posts, life notes, and
 photographs. The sample version is written for Qi Hao Liang and is ready to
 adapt with real stories and images.
 
 ## Personalise it
 
-- Edit the words, dates, diary entries, notes, and email address in
+- Edit the words, dates, posts, notes, and email address in
   `app/page.tsx`.
 - Adjust the colours and layout in `app/globals.css`.
 - Replace the sample files in `public/photos/` with personal photographs.

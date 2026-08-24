@@ -38,7 +38,9 @@ test("server-renders Qi Hao's personal corner", async () => {
   assert.ok(html.indexOf('id="about"') < html.indexOf('class="hero"'));
   assert.match(html, /id="about"[\s\S]*?src="\.\/qihao-portrait\.jpg"/);
   assert.match(html, /src="\.\/photos\/desk\.jpg"/);
-  assert.match(html, /recent diary stuff/);
+  assert.match(html, /href="#posts">posts<\/a>/);
+  assert.match(html, /recent posts/);
+  assert.doesNotMatch(html, /href="#diary">diary<\/a>/);
   assert.match(html, /some photos i like/);
   assert.match(html, /\.\/photos\/light-drawing-figure\.jpg/);
   assert.match(html, /\.\/photos\/light-drawing-face\.jpg/);

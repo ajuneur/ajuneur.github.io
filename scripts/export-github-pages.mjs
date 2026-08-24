@@ -120,7 +120,7 @@ try {
   const rendered = await waitForPage();
   const staticDocument = makeStaticDocument(rendered, {
     title: "Qi Hao — a little corner of the internet",
-    description: "Diary entries, photos, and little things from life lately.",
+    description: "Posts, photos, and little things from life lately.",
     socialImage: "og.png",
     canonicalPath: "",
     type: "website",

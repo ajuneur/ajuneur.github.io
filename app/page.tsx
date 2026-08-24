@@ -91,7 +91,7 @@ export default function Home() {
           qh<span>.</span>
         </a>
         <nav aria-label="Main navigation">
-          <a href="#diary">diary</a>
+          <a href="#posts">posts</a>
           <a href="#photos">photos</a>
           <a href="#paintings">paintings</a>
           <a href="#now">right now</a>
@@ -177,12 +177,12 @@ export default function Home() {
               just keeping track of <em>life as it happens.</em>
             </h1>
             <p className="hero-intro">
-              this is my little corner for diary entries, photos, and random
+              this is my little corner for posts, photos, and random
               things i don’t want to forget.
             </p>
             <div className="hero-links">
-              <a className="primary-link" href="#diary">
-                read my notes
+              <a className="primary-link" href="#posts">
+                read my posts
               </a>
               <a className="plain-link" href="#photos">
                 see some photos <span aria-hidden="true">↓</span>
@@ -206,11 +206,11 @@ export default function Home() {
           </figure>
         </section>
 
-        <section className="section" id="diary" aria-labelledby="diary-title">
+        <section className="section" id="posts" aria-labelledby="posts-title">
           <div className="section-heading">
             <div>
-              <p className="section-label">01 / diary</p>
-              <h2 id="diary-title">recent diary stuff</h2>
+              <p className="section-label">01 / posts</p>
+              <h2 id="posts-title">recent posts</h2>
             </div>
             <p>nothing too serious — just days i felt like keeping.</p>
           </div>
