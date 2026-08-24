@@ -34,14 +34,14 @@ const photographs = [
     caption: "a blank page, finally",
   },
   {
-    src: "./photos/garden.jpg",
-    alt: "A garden full of colourful flowers",
-    caption: "saturday colour study",
+    src: "./photos/light-drawing-figure.jpg",
+    alt: "A glowing continuous-line figure drawn with light against a dark night landscape",
+    caption: "drawing with light, after dark",
   },
   {
-    src: "./photos/flowers.jpg",
-    alt: "Purple flowers after rainfall",
-    caption: "after the rain",
+    src: "./photos/light-drawing-face.jpg",
+    alt: "A glowing abstract face drawn with light against a dark night landscape",
+    caption: "a face made in one line",
   },
 ];
 
@@ -322,8 +322,7 @@ export default function Home() {
         <details>
           <summary>sample photo credits</summary>
           <p>
-            Carson Arias, Kelly Sikkema, Rain Bennett, SnapSaga, and Dulant Pang
-            via Unsplash.
+            Carson Arias, Kelly Sikkema, and SnapSaga via Unsplash.
           </p>
         </details>
         <a href="#top">back to top ↑</a>
