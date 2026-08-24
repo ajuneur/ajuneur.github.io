@@ -39,7 +39,11 @@ test("server-renders Qi Hao's personal corner", async () => {
   assert.match(html, /id="top"/);
   assert.ok(html.indexOf('id="about"') < html.indexOf('class="hero"'));
   assert.match(html, /id="about"[\s\S]*?src="\.\/qihao-portrait\.jpg"/);
-  assert.match(html, /src="\.\/photos\/desk\.jpg"/);
+  assert.match(html, /class="hero-scrapbook"/);
+  assert.match(html, /\.\/posts\/new-ring\/ring-close-up-fixed\.jpg/);
+  assert.match(html, /\.\/photos\/leaves-in-the-night\.jpg/);
+  assert.match(html, /\.\/paintings\/painting-09\.jpg/);
+  assert.doesNotMatch(html, /src="\.\/photos\/desk\.jpg"/);
   assert.match(html, /href="#posts">posts<\/a>/);
   assert.match(html, /recent posts/);
   assert.match(html, /href="\.\/posts\/the-chapel-and-the-cliff"/);
@@ -48,6 +52,18 @@ test("server-renders Qi Hao's personal corner", async () => {
   assert.match(html, /href="\.\/posts\/a-weekend-without-a-plan"/);
   assert.match(html, /A weekend without a plan/);
   assert.match(html, /read the post →/);
+  const postsSection = html.slice(
+    html.indexOf('id="posts"'),
+    html.indexOf('id="photos"'),
+  );
+  assert.ok(
+    postsSection.indexOf("a-weekend-without-a-plan") <
+      postsSection.indexOf("the-ring-i-bought-for-free-delivery"),
+  );
+  assert.ok(
+    postsSection.indexOf("the-ring-i-bought-for-free-delivery") <
+      postsSection.indexOf("the-chapel-and-the-cliff"),
+  );
   assert.doesNotMatch(html, /The hour before the city wakes/);
   assert.doesNotMatch(html, /Things I want to remember/);
   assert.doesNotMatch(html, /href="#diary">diary<\/a>/);
@@ -67,10 +83,13 @@ test("server-renders Qi Hao's personal corner", async () => {
   assert.match(html, /four different seasons/);
   assert.match(html, /title coming soon/);
   assert.match(html, /\.\/paintings\/painting-09\.jpg/);
-  assert.match(html, /hey, i’m qihao\./);
+  assert.match(html, /hey! i am Qihao Liang\./);
+  assert.match(html, /he\/they/);
   assert.match(html, /Chee Hao/);
-  assert.match(html, /currently doing a PhD/);
+  assert.match(html, /currently doing a PhD in computer science/);
+  assert.match(html, /LITERALLY don’t want research/);
   assert.match(html, /keep life feeling alive/);
+  assert.match(html, /learning and thinking about lately/);
   assert.match(html, /the best sushi i’ve ever had/);
   assert.match(html, /my friend[\s\S]*?the udon/);
   assert.match(html, /https:\/\/maps\.app\.goo\.gl\/KoSfhf5JGTH3pRUA8\?g_st=ic/);

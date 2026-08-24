@@ -1,6 +1,10 @@
 import { photographs } from "./photo-data";
 import { posts } from "./post-data";
 
+const orderedPosts = [...posts].sort(
+  (a, b) => Date.parse(b.date) - Date.parse(a.date),
+);
+
 const now = [
   {
     emoji: "🎧",
@@ -114,7 +118,10 @@ export default function Home() {
         <section className="about-card" id="about" aria-labelledby="about-title">
           <div className="about-heading">
             <p className="section-label">00 / about</p>
-            <h2 id="about-title">hey, i’m qihao.</h2>
+            <div className="about-title-line">
+              <h2 id="about-title">hey! i am Qihao Liang.</h2>
+              <span className="pronouns">he/they</span>
+            </div>
             <p className="pronunciation">
               pronounced <strong>Chee Hao</strong> — “Chee” as in cheese.
             </p>
@@ -141,10 +148,10 @@ export default function Home() {
           </div>
           <div className="about-copy">
             <p>
-              i’m currently doing a PhD, but i don’t want studying to inundate
-              every corner of my life. i made this little webpage to give the
-              rest of me some room again—to notice things, make things, and
-              keep life feeling alive.
+              i’m currently doing a PhD in computer science, but LITERALLY don’t
+              want research to inundate every corner of my life. i made this
+              little webpage to give the rest of me some room again—to notice
+              things, make things, and keep life feeling alive.
             </p>
             <p>
               i’m endlessly curious about the little things that make life feel
@@ -153,9 +160,10 @@ export default function Home() {
               trying to understand the world through a new language.
             </p>
             <p>
-              this corner of the internet is where i collect the things i want
-              to remember: photographs, ordinary days, neighbourhood walks,
-              good light, and whatever i’m learning lately.
+              this corner of the internet is where i collect the things that i
+              want to remember: photographs, ordinary days, neighbourhood
+              walks, good light, and whatever i’m learning and thinking about
+              lately.
             </p>
 
             <div className="interest-list" aria-label="Things I like">
@@ -218,18 +226,37 @@ export default function Home() {
               <span className="status-dot" aria-hidden="true" />
               <p>
                 currently
-                <strong>making more room for unhurried days</strong>
+                <strong>reading Newcomer + Project Hail Mary</strong>
               </p>
             </div>
           </div>
 
-          <figure className="hero-photo">
-            <img
-              src="./photos/desk.jpg"
-              alt="An open notebook, pen, glasses, and a coffee on a wooden table"
-            />
-            <figcaption>somewhere between coffee and a blank page</figcaption>
-          </figure>
+          <div className="hero-scrapbook" aria-label="A few things from Qihao’s life">
+            <a
+              className="hero-tile hero-tile-main"
+              href="./posts/the-ring-i-bought-for-free-delivery"
+            >
+              <img
+                src="./posts/new-ring/ring-close-up-fixed.jpg"
+                alt="A shiny flower ring with pearly petals and a gold centre"
+              />
+              <span><small>recent post</small>an accidental ring</span>
+            </a>
+            <a className="hero-tile" href="./photos/leaves-in-a-pocket-of-light">
+              <img
+                src="./photos/leaves-in-the-night.jpg"
+                alt="Leaves and fine spiderweb strands caught in warm light"
+              />
+              <span><small>photograph</small>a pocket of light</span>
+            </a>
+            <a className="hero-tile" href="#paintings">
+              <img
+                src="./paintings/painting-09.jpg"
+                alt="Qihao’s colourful painting of a piano surrounded by flowing patterns"
+              />
+              <span><small>painting</small>colour + music</span>
+            </a>
+          </div>
         </section>
 
         <section className="section" id="posts" aria-labelledby="posts-title">
@@ -242,7 +269,7 @@ export default function Home() {
           </div>
 
           <div className="diary-grid">
-            {posts.map((entry) => (
+            {orderedPosts.map((entry) => (
               <a
                 className="diary-card"
                 href={`./posts/${entry.slug}`}
