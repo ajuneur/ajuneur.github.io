@@ -97,7 +97,7 @@ const paintings = [
     src: "./paintings/painting-06.jpg",
     alt: "A black-and-white grid of interlocking gears, wheels, and mechanical patterns",
     title: "Rembobinez",
-    story: "Sometime I wish I could rewind the time (rembobiner) so that I can undo or redo something. However, that would only cause paradox. I will not choose to return to the past, but I will choose to move forward and embrace the present. The interlocking gears and mechanical patterns represent the intricate workings of time and the inevitability of change.",
+    story: "Rembobiner is the French word for 'to rewind'. Somehow I've always felt a special connection to this particular word. Sometime I wish I could rewind the time (rembobiner) so that I can undo or redo something. However, that would only cause paradox. I will not choose to return to the past, but I will choose to move forward and embrace the present. The interlocking gears and mechanical patterns represent the intricate workings of time and the inevitability of change.",
   },
   {
     src: "./paintings/painting-07.jpg",
