@@ -869,8 +869,7 @@ footer > a {
   margin: 0;
 }
 
-.post-image-gallery figure:first-child,
-.post-image-gallery figure:last-child {
+.post-image-gallery figure:first-child {
   grid-column: 1 / -1;
 }
 
@@ -1087,8 +1086,7 @@ footer > a {
     margin-top: 36px;
   }
 
-  .post-image-gallery figure:first-child,
-  .post-image-gallery figure:last-child {
+  .post-image-gallery figure:first-child {
     grid-column: auto;
   }
 

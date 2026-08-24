@@ -189,10 +189,13 @@ test("publishes the accidental ring as a photo post", async () => {
   );
   assert.match(html, /24 Aug 2026/);
   assert.match(html, /reach the minimum for free delivery/);
+  assert.match(html, /This men’s item is also popular with women/);
+  assert.match(html, /This women’s item is also popular with men/);
   assert.match(html, /I think it looks good on me!/i);
   assert.match(html, /class="post-image-gallery"/);
   assert.match(html, /portrait-with-ring\.jpg/);
   assert.match(html, /ring-close-up\.jpg/);
+  assert.match(html, /uniqlo-tag\.jpg/);
   assert.match(html, /portrait-at-the-window\.jpg/);
   assert.match(html, /ring-at-the-desk\.jpg/);
   assert.match(

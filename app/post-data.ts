@@ -29,7 +29,8 @@ export const posts: Post[] = [
       "I did not set out to buy a ring. I was simply trying to reach the minimum for free delivery, which is how online shopping persuades you to spend more money in order to feel like you have saved some.",
       "The ring was cheap, and at the time it was mostly there to complete the arithmetic of my cart. I did not expect much from it. It was just a large flower, a little dramatic, and useful enough to push the order over the line.",
       "Then it arrived, and I tried it on. The pearly petals and gold centre looked much better on my hand than I had imagined. It is not subtle at all, but perhaps that is why I like it—it makes even sitting at a table or typing on my laptop feel slightly more dressed up.",
-      "So the item I almost did not buy, bought for a reason that had almost nothing to do with wanting it, has somehow become the thing I keep looking at. Cheap, accidental, and a bit ridiculous—but I think it looks good on me!",
+      "I also had another reason for sharing it. At Uniqlo, I came across a tag that said, “This men’s item is also popular with women.” It made me laugh—not only because the sign felt like a tiny permission slip, but because it immediately made me think of the ring.",
+      "So perhaps mine should have its own tag: “This women’s item is also popular with men.” Or at least with one man. The item I almost did not buy, bought for a reason that had almost nothing to do with wanting it, has somehow become the thing I keep looking at. Cheap, accidental, and a bit ridiculous—but I think it looks good on me!",
     ],
     images: [
       {
@@ -41,6 +42,11 @@ export const posts: Post[] = [
         src: "/posts/new-ring/ring-close-up.jpg",
         alt: "Close-up of a large pearly flower ring with a gold centre on Qihao's hand",
         caption: "the ring in full, unapologetically floral detail.",
+      },
+      {
+        src: "/posts/new-ring/uniqlo-tag.jpg",
+        alt: "A Uniqlo tag reading that a men's item is also popular with women",
+        caption: "the Uniqlo tag that gave me the idea for this post.",
       },
       {
         src: "/posts/new-ring/portrait-at-the-window.jpg",
