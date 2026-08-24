@@ -113,6 +113,7 @@ test("publishes the Barcelona dream as its own post", async () => {
 
   const html = await response.text();
   assert.match(html, /<title>The chapel and the cliff — Qihao<\/title>/i);
+  assert.match(html, /18 Apr 2026/);
   assert.match(html, /where tenderness is transformed by shame into something fatal/);
   assert.match(html, /one interesting dream/);
   assert.match(html, /Far away from the chapel sat two young boys/);

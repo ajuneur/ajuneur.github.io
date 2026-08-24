@@ -12,7 +12,7 @@ export type Post = {
 export const posts: Post[] = [
   {
     slug: "the-chapel-and-the-cliff",
-    date: "24 Aug 2026",
+    date: "18 Apr 2026",
     title: "The chapel and the cliff",
     excerpt:
       "Two boys walk toward a chapel in the mild Barcelona spring. By noon, love has curdled into fear.",
