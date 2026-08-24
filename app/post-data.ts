@@ -39,7 +39,7 @@ export const posts: Post[] = [
         caption: "trying on the accidental addition to the order.",
       },
       {
-        src: "/posts/new-ring/ring-close-up.jpg",
+        src: "/posts/new-ring/ring-close-up-fixed.jpg",
         alt: "Close-up of a large pearly flower ring with a gold centre on Qihao's hand",
         caption: "the ring in full, unapologetically floral detail.",
       },

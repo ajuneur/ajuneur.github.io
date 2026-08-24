@@ -194,7 +194,7 @@ test("publishes the accidental ring as a photo post", async () => {
   assert.match(html, /I think it looks good on me!/i);
   assert.match(html, /class="post-image-gallery"/);
   assert.match(html, /portrait-with-ring\.jpg/);
-  assert.match(html, /ring-close-up\.jpg/);
+  assert.match(html, /ring-close-up-fixed\.jpg/);
   assert.match(html, /uniqlo-tag\.jpg/);
   assert.match(html, /portrait-at-the-window\.jpg/);
   assert.match(html, /ring-at-the-desk\.jpg/);
