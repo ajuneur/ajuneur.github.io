@@ -158,8 +158,8 @@ export default function Home() {
               <span className="pronouns">he/they</span>
             </div>
             <p className="pronunciation">
-              pronounced <strong>Chee Hao</strong> -- “Chee” as in cheese. 
-              i am also obsessed with zhuyin (ㄅㄆㄇㄈ), so i sometimes write my name as ㄑㄏ(zhuyin acronyms).
+              pronounced <strong>chee hao</strong> -- “chee” as in cheese. though the wade-giles spelling is chi-hao, someone still pronounced it as "kai-hao" (sigh...)
+              i am also obsessed with zhuyin (ㄅㄆㄇㄈ), so i sometimes write my name as ㄑㄏ(my zhuyin initials).
             </p>
             <figure className="about-portrait">
               <img
