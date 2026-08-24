@@ -272,7 +272,6 @@ export default function Home() {
                 height="1200"
                 loading="lazy"
               />
-              <figcaption>hi, this is me.</figcaption>
             </figure>
           </div>
           <div className="about-copy">

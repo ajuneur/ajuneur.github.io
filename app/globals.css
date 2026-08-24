@@ -512,20 +512,21 @@ footer a:hover {
 }
 
 .about-portrait {
-  max-width: 300px;
-  margin: 32px 0 0;
+  width: 168px;
+  aspect-ratio: 1;
+  margin: 28px 0 0;
+  overflow: hidden;
+  border: 6px solid rgba(255, 255, 255, 0.62);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.55);
 }
 
 .about-portrait img {
-  aspect-ratio: 3 / 4;
-  border-radius: 20px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-}
-
-.about-portrait figcaption {
-  margin: 9px 4px 0;
-  color: var(--muted);
-  font-size: 0.72rem;
+  transform: scale(1.65);
+  transform-origin: 67% 43%;
 }
 
 .about-copy > p {
