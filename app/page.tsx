@@ -196,9 +196,9 @@ export default function Home() {
             </p>
             <p>
               i also LOVE travelling!! i think my favourite part is just wandering around a 
-              city and seeing what everyday life feels like there – the streets, the neighbourhoods, 
-              the public transport, the random little shops, all of it. favourite cities so far: taipei, 
-              perth, and montréal (but montréal specifically in august lol).
+              city and seeing what everyday life feels like there -- the streets, the neighbourhoods, 
+              the public transport, the random cute shops, all of it. favourite cities so far: taipei, 
+              perth, and montréal (ONLY in july/august lol).
             </p>
             <p>
               this little corner of the internet is basically where i keep things i don’t want to forget
