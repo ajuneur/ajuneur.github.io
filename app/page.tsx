@@ -86,7 +86,7 @@ export default function Home() {
         Skip to content
       </a>
 
-      <header className="site-header">
+      <header className="site-header" id="top">
         <a className="brand" href="#top" aria-label="Qi Hao, home">
           qh<span>.</span>
         </a>
@@ -103,7 +103,68 @@ export default function Home() {
       </header>
 
       <main id="main">
-        <section className="hero" id="top" aria-labelledby="hero-title">
+        <section className="about-card" id="about" aria-labelledby="about-title">
+          <div className="about-heading">
+            <p className="section-label">00 / about</p>
+            <h2 id="about-title">hey, i’m qihao.</h2>
+            <p className="pronunciation">
+              pronounced <strong>Chee Hao</strong> — “Chee” as in cheese.
+            </p>
+            <figure className="about-portrait">
+              <img
+                src="./qihao-portrait.jpg"
+                alt="Qihao smiling over a plate of sushi at a restaurant"
+                width="909"
+                height="1200"
+              />
+            </figure>
+          </div>
+          <div className="about-copy">
+            <p>
+              i’m endlessly curious about the little things that make life feel
+              bigger. you’ll usually find me halfway through a book, watching a
+              movie i’ll think about for days, making little bits of music, or
+              trying to understand the world through a new language.
+            </p>
+            <p>
+              this corner of the internet is where i collect the things i want
+              to remember: photographs, ordinary days, neighbourhood walks,
+              good light, and whatever i’m learning lately.
+            </p>
+
+            <div className="interest-list" aria-label="Things I like">
+              {interests.map(([emoji, interest]) => (
+                <span key={interest}>
+                  <span aria-hidden="true">{emoji}</span> {interest}
+                </span>
+              ))}
+            </div>
+
+            <div className="social-area">
+              <p>find me online</p>
+              <div className="social-links" aria-label="Social links">
+                <a
+                  href="https://www.instagram.com/ajuneur/"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Qihao on Instagram (opens in a new tab)"
+                >
+                  instagram ↗
+                </a>
+                <a
+                  href="https://sg.linkedin.com/in/qihao-liang-3a17ba249"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Qihao on LinkedIn (opens in a new tab)"
+                >
+                  linkedin ↗
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="hero" aria-labelledby="hero-title">
           <div className="hero-copy">
             <p className="hello">hello, i’m qi hao <span aria-hidden="true">👋</span></p>
             <h1 id="hero-title">
@@ -132,12 +193,10 @@ export default function Home() {
 
           <figure className="hero-photo">
             <img
-              src="./qihao-portrait.jpg"
-              alt="Qihao smiling over a plate of sushi at a restaurant"
-              width="909"
-              height="1200"
+              src="./photos/desk.jpg"
+              alt="An open notebook, pen, glasses, and a coffee on a wooden table"
             />
-            <figcaption>hi, this is me.</figcaption>
+            <figcaption>somewhere between coffee and a blank page</figcaption>
           </figure>
         </section>
 
@@ -260,58 +319,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="about-card" id="about" aria-labelledby="about-title">
-          <div className="about-heading">
-            <p className="section-label">05 / about</p>
-            <h2 id="about-title">hey, i’m qihao.</h2>
-            <p className="pronunciation">
-              pronounced <strong>Chee Hao</strong> — “Chee” as in cheese.
-            </p>
-          </div>
-          <div className="about-copy">
-            <p>
-              i’m endlessly curious about the little things that make life feel
-              bigger. you’ll usually find me halfway through a book, watching a
-              movie i’ll think about for days, making little bits of music, or
-              trying to understand the world through a new language.
-            </p>
-            <p>
-              this corner of the internet is where i collect the things i want
-              to remember: photographs, ordinary days, neighbourhood walks,
-              good light, and whatever i’m learning lately.
-            </p>
-
-            <div className="interest-list" aria-label="Things I like">
-              {interests.map(([emoji, interest]) => (
-                <span key={interest}>
-                  <span aria-hidden="true">{emoji}</span> {interest}
-                </span>
-              ))}
-            </div>
-
-            <div className="social-area">
-              <p>find me online</p>
-              <div className="social-links" aria-label="Social links">
-                <a
-                  href="https://www.instagram.com/ajuneur/"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="Qihao on Instagram (opens in a new tab)"
-                >
-                  instagram ↗
-                </a>
-                <a
-                  href="https://sg.linkedin.com/in/qihao-liang-3a17ba249"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="Qihao on LinkedIn (opens in a new tab)"
-                >
-                  linkedin ↗
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
 
       <footer>

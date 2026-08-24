@@ -34,12 +34,10 @@ test("server-renders Qi Hao's personal corner", async () => {
   assert.match(html, /<title>Qi Hao — a little corner of the internet<\/title>/i);
   assert.match(html, /just keeping track of/);
   assert.match(html, /life as it happens\./);
-  assert.match(
-    html,
-    /class="hero-photo"[\s\S]*?src="\.\/qihao-portrait\.jpg"/,
-  );
-  assert.match(html, /hi, this is me\./);
-  assert.doesNotMatch(html, /src="\.\/photos\/desk\.jpg"/);
+  assert.match(html, /id="top"/);
+  assert.ok(html.indexOf('id="about"') < html.indexOf('class="hero"'));
+  assert.match(html, /id="about"[\s\S]*?src="\.\/qihao-portrait\.jpg"/);
+  assert.match(html, /src="\.\/photos\/desk\.jpg"/);
   assert.match(html, /recent diary stuff/);
   assert.match(html, /some photos i like/);
   assert.match(html, /\.\/photos\/light-drawing-figure\.jpg/);
