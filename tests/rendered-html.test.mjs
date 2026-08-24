@@ -57,6 +57,7 @@ test("server-renders Qi Hao's personal corner", async () => {
   assert.match(html, /https:\/\/www\.instagram\.com\/ajuneur\//);
   assert.match(html, /https:\/\/sg\.linkedin\.com\/in\/qihao-liang-3a17ba249/);
   assert.match(html, /mailto:cheehaoliang@gmail\.com/);
+  assert.match(html, /get in touch ↗/);
   assert.match(html, /https:\/\/field-notes\.example\/og\.png/);
   assert.doesNotMatch(html, /codex-preview|SkeletonPreview|react-loading-skeleton/);
 });

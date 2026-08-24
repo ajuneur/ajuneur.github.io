@@ -163,7 +163,7 @@ export default function Home() {
                   href="mailto:cheehaoliang@gmail.com"
                   aria-label="Email Qihao at cheehaoliang@gmail.com"
                 >
-                  cheehaoliang@gmail.com ↗
+                  get in touch ↗
                 </a>
               </div>
             </div>
