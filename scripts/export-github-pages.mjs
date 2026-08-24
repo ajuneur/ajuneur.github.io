@@ -2,6 +2,7 @@ import { spawn } from "node:child_process";
 import { cp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { photographs } from "../app/photo-data.ts";
+import { posts } from "../app/post-data.ts";
 
 const root = process.cwd();
 const outputDir = path.join(root, "github-pages");
@@ -149,6 +150,22 @@ try {
     await writeFile(path.join(pageDir, "index.html"), photoDocument);
   }
 
+  for (const post of posts) {
+    const pageDir = path.join(outputDir, "posts", post.slug);
+    const postPage = await waitForPage(`/posts/${post.slug}`);
+    const postDocument = makeStaticDocument(postPage, {
+      title: `${post.title} — Qihao`,
+      description: post.description,
+      socialImage: post.images?.[0]?.src.replace(/^\//, "") ?? "og.png",
+      canonicalPath: `posts/${post.slug}/`,
+      type: "article",
+      assetPrefix: "../../",
+    });
+
+    await mkdir(pageDir, { recursive: true });
+    await writeFile(path.join(pageDir, "index.html"), postDocument);
+  }
+
   const cssManifest = JSON.parse(
     await readFile(path.join(outputDir, ".vite", "manifest.json"), "utf8"),
   );
@@ -157,7 +174,7 @@ try {
   }
 
   console.log(
-    `GitHub Pages package created at ${outputDir} with ${photographs.length} photo stories`,
+    `GitHub Pages package created at ${outputDir} with ${photographs.length} photo stories and ${posts.length} posts`,
   );
 } catch (error) {
   if (serverErrors) process.stderr.write(serverErrors);

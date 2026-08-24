@@ -8,6 +8,12 @@ const orderedPosts = [...posts].sort(
 const now = [
   {
     emoji: "🎧",
+    images: [
+      {
+        src: "./now/the-fight.jpg",
+        alt: "A still from Silly Boy Blue’s The Fight music video",
+      },
+    ],
     label: "favourite song",
     copy: "“The Fight” by Silly Boy Blue",
     detail: "the song currently following me everywhere.",
@@ -16,6 +22,10 @@ const now = [
   },
   {
     emoji: "📖",
+    images: [
+      { src: "./now/newcomer.jpg", alt: "Cover of Newcomer by Keigo Higashino" },
+      { src: "./now/project-hail-mary.jpg", alt: "Cover of Project Hail Mary by Andy Weir" },
+    ],
     label: "reading",
     copy: "Newcomer + Project Hail Mary",
     detail: "Keigo Higashino on one side, Andy Weir on the other.",
@@ -24,6 +34,7 @@ const now = [
   },
   {
     emoji: "💄",
+    images: undefined,
     label: "learning",
     copy: "simple makeup, very slowly",
     detail:
@@ -33,6 +44,12 @@ const now = [
   },
   {
     emoji: "🇫🇷",
+    images: [
+      {
+        src: "./now/skam-france-season-10.jpg",
+        alt: "SKAM France season 10 poster featuring Anaïs",
+      },
+    ],
     label: "learning french",
     copy: "through SKAM France",
     detail:
@@ -380,6 +397,20 @@ export default function Home() {
           <div className="now-grid">
             {now.map((item) => (
               <article className="now-card" key={item.label}>
+                {item.images ? (
+                  <div
+                    className={`now-media${item.images.length > 1 ? " now-media-pair" : ""}`}
+                  >
+                    {item.images.map((image) => (
+                      <img
+                        src={image.src}
+                        alt={image.alt}
+                        loading="lazy"
+                        key={image.src}
+                      />
+                    ))}
+                  </div>
+                ) : null}
                 <span className="now-emoji" aria-hidden="true">
                   {item.emoji}
                 </span>

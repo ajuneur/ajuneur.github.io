@@ -101,11 +101,15 @@ test("server-renders Qi Hao's personal corner", async () => {
   assert.match(html, /mailto:cheehaoliang@gmail\.com/);
   assert.match(html, /get in touch ↗/);
   assert.match(html, /“The Fight” by Silly Boy Blue/);
+  assert.match(html, /\.\/now\/the-fight\.jpg/);
   assert.match(html, /Newcomer \+ Project Hail Mary/);
+  assert.match(html, /\.\/now\/newcomer\.jpg/);
+  assert.match(html, /\.\/now\/project-hail-mary\.jpg/);
   assert.match(html, /simple makeup, very slowly/);
   assert.match(html, /shu uemura/);
   assert.match(html, /Fenty Beauty/);
   assert.match(html, /through SKAM France/);
+  assert.match(html, /\.\/now\/skam-france-season-10\.jpg/);
   assert.match(html, /2 \(Manon\), 7 \(Tiffany\), and 10 \(Anaïs\)/);
   assert.match(html, /music\.youtube\.com\/search\?q=silly\+boy\+blue\+the\+fight/);
   assert.match(html, /https:\/\/www\.france\.tv\/slash\/skam-france\//);
