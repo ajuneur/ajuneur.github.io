@@ -112,9 +112,16 @@ test("publishes the Barcelona dream as its own post", async () => {
   assert.match(html, /<title>The chapel and the cliff — Qihao<\/title>/i);
   assert.match(html, /where tenderness is transformed by shame into something fatal/);
   assert.match(html, /one interesting dream/);
+  assert.match(html, /Far away from the chapel sat two young boys/);
+  assert.match(html, /They held hands and walked freely/);
   assert.match(html, /The morning in the forest had felt innocent/);
+  assert.match(html, /Pablo felt safe beside him/);
+  assert.match(html, /He was not frightened of Pablo/);
   assert.match(html, /the chapel seemed to make it holy/);
   assert.match(html, /Alex did\./);
+  assert.match(html, /Then Alex pushed\./);
+  assert.match(html, /The love remained exactly where it had been/);
+  assert.match(html, /He had only destroyed the person/);
   assert.match(html, /The clouds were gone\./);
   assert.match(html, /id="main"/);
   assert.doesNotMatch(html, /og\.png/);
