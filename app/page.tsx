@@ -29,7 +29,8 @@ const paintings = [
     src: "./paintings/painting-01.jpg",
     alt: "A colourful painting of layered leaves and branching forms",
     title: "Seasons",
-    story: "Leaves gathered across four seasons, preserved in a world of paint. I painted the background, then layered real leaves over it, allowing nature and its representation to overlap. Somewhere between two and three dimensions, the seasons seem to fold into one another—a small reflection on time, change, and what remains.",
+    story: "I collected leaves from four different seasons, painted their world onto the background, and then brought the real leaves back into the painting. Layered between the painted and the real, the piece becomes a 2.5-dimensional reflection on the passing of the seasons."
+    //story: "Leaves gathered across four seasons, preserved in a world of paint. I painted the background, then layered real leaves over it, allowing nature and its representation to overlap. Somewhere between two and three dimensions, the seasons seem to fold into one another—a small reflection on time, change, and what remains.",
   },
   {
     src: "./paintings/painting-02.jpg",
