@@ -39,6 +39,22 @@ export const photographs: Photograph[] = [
     description:
       "A face briefly suspended in the dark, made from one wandering line of light.",
   },
+  {
+    slug: "leaves-in-a-pocket-of-light",
+    image: "leaves-in-the-night.jpg",
+    alt: "Green leaves, pale seed pods, and fine spiderweb strands lit against a dark background",
+    title: "leaves in a pocket of light",
+    description:
+      "A few leaves, seed pods, and strands of web caught in a narrow pool of warm light.",
+  },
+  {
+    slug: "three-figures-on-a-wooden-wall",
+    image: "three-figures.jpg",
+    alt: "Three simple white human figure signs arranged on a wooden wall",
+    title: "three figures on a wooden wall",
+    description:
+      "A trio of simple white figures on wood—ordinary signage made unexpectedly graphic.",
+  },
 ];
 
 export function getPhotograph(slug: string) {

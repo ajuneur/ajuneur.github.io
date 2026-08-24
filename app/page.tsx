@@ -1,23 +1,40 @@
 import { photographs } from "./photo-data";
 import { posts } from "./post-data";
 
-const diaryEntries = [
-  ...posts,
+const now = [
   {
-    slug: undefined,
-    date: "18 Aug 2026",
-    title: "The hour before the city wakes",
-    excerpt:
-      "A slow walk, the first shutters opening, and the soft clink of cups from a corner coffee shop.",
-    tag: "morning walk",
+    emoji: "🎧",
+    label: "favourite song",
+    copy: "“The Fight” by Silly Boy Blue",
+    detail: "the song currently following me everywhere.",
+    href: "https://music.youtube.com/search?q=silly+boy+blue+the+fight",
+    linkLabel: "listen on YouTube Music ↗",
   },
   {
-    slug: undefined,
-    date: "03 Aug 2026",
-    title: "Things I want to remember",
-    excerpt:
-      "Mum's voice note, rain against the kitchen window, and a book that arrived at exactly the right time.",
-    tag: "small things",
+    emoji: "📖",
+    label: "reading",
+    copy: "Newcomer + Project Hail Mary",
+    detail: "Keigo Higashino on one side, Andy Weir on the other.",
+    href: undefined,
+    linkLabel: undefined,
+  },
+  {
+    emoji: "💄",
+    label: "learning",
+    copy: "simple makeup, very slowly",
+    detail:
+      "eyebrow powder, foundation, primer, a brush, and concealer from shu uemura; contour from Fenty Beauty. impressive kit, questionable motivation lol.",
+    href: undefined,
+    linkLabel: undefined,
+  },
+  {
+    emoji: "🇫🇷",
+    label: "learning french",
+    copy: "through SKAM France",
+    detail:
+      "favourite seasons: 2 (Manon), 7 (Tiffany), and 10 (Anaïs).",
+    href: "https://www.france.tv/slash/skam-france/",
+    linkLabel: "watch on France TV ↗",
   },
 ];
 
@@ -61,12 +78,6 @@ const paintings = [
     src: "./paintings/painting-09.jpg",
     alt: "A colourful piano surrounded by flowing red, orange, blue, and green patterns",
   },
-];
-
-const now = [
-  ["🎧", "listening", "the same three songs on the bus home"],
-  ["📖", "reading", "essays best enjoyed one page at a time"],
-  ["🌱", "learning", "a photo doesn’t need to explain itself"],
 ];
 
 const interests = [
@@ -231,40 +242,26 @@ export default function Home() {
           </div>
 
           <div className="diary-grid">
-            {diaryEntries.map((entry) => {
-              const card = (
-                <>
+            {posts.map((entry) => (
+              <a
+                className="diary-card"
+                href={`./posts/${entry.slug}`}
+                key={entry.title}
+                aria-label={`Read ${entry.title}`}
+              >
                 <div className="card-meta">
                   <time>{entry.date}</time>
                   <span>{entry.tag}</span>
                 </div>
                 <h3>{entry.title}</h3>
                 <p>{entry.excerpt}</p>
-                {entry.slug ? (
-                  <span className="card-read">
-                    {entry.tag === "dream"
-                      ? "read the dream →"
-                      : "read the post →"}
-                  </span>
-                ) : null}
-                </>
-              );
-
-              return entry.slug ? (
-                <a
-                  className="diary-card"
-                  href={`./posts/${entry.slug}`}
-                  key={entry.title}
-                  aria-label={`Read ${entry.title}`}
-                >
-                  {card}
-                </a>
-              ) : (
-                <article className="diary-card" key={entry.title}>
-                  {card}
-                </article>
-              );
-            })}
+                <span className="card-read">
+                  {entry.tag === "dream"
+                    ? "read the dream →"
+                    : "read the post →"}
+                </span>
+              </a>
+            ))}
           </div>
         </section>
 
@@ -272,9 +269,9 @@ export default function Home() {
           <div className="section-heading">
             <div>
               <p className="section-label">02 / photos</p>
-              <h2 id="photos-title">some photos i like</h2>
+              <h2 id="photos-title">photos i’ve taken</h2>
             </div>
-            <p>mostly walks, little details, and nice light.</p>
+            <p>small scenes i noticed and wanted to keep.</p>
           </div>
 
           <div className="photo-grid">
@@ -354,11 +351,19 @@ export default function Home() {
           </div>
 
           <div className="now-grid">
-            {now.map(([emoji, label, copy]) => (
-              <article className="now-card" key={label}>
-                <span className="now-emoji" aria-hidden="true">{emoji}</span>
-                <p>{label}</p>
-                <h3>{copy}</h3>
+            {now.map((item) => (
+              <article className="now-card" key={item.label}>
+                <span className="now-emoji" aria-hidden="true">
+                  {item.emoji}
+                </span>
+                <p>{item.label}</p>
+                <h3>{item.copy}</h3>
+                <p className="now-detail">{item.detail}</p>
+                {item.href ? (
+                  <a href={item.href} target="_blank" rel="noreferrer">
+                    {item.linkLabel}
+                  </a>
+                ) : null}
               </article>
             ))}
           </div>

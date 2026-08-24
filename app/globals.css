@@ -469,23 +469,29 @@ footer a:hover {
 
 .now-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 14px;
 }
 
 .now-card {
-  min-height: 190px;
+  min-height: 260px;
   padding: 24px;
+  display: flex;
+  flex-direction: column;
   border-radius: var(--radius);
   background: var(--accent-soft);
 }
 
 .now-card:nth-child(2) {
-  background: var(--accent-soft);
+  background: var(--warm);
 }
 
 .now-card:nth-child(3) {
   background: #e8e7ef;
+}
+
+.now-card:nth-child(4) {
+  background: #e4ecec;
 }
 
 .now-emoji {
@@ -502,10 +508,31 @@ footer a:hover {
 
 .now-card h3 {
   margin: 0;
-  font-size: 1.12rem;
+  font-size: 1.2rem;
   font-weight: 570;
   line-height: 1.35;
   letter-spacing: -0.02em;
+}
+
+.now-card .now-detail {
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+.now-card > a {
+  width: fit-content;
+  margin-top: auto;
+  padding-top: 20px;
+  color: var(--accent);
+  font-size: 0.76rem;
+  font-weight: 650;
+}
+
+.now-card > a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .about-card {

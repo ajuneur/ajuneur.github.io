@@ -48,10 +48,17 @@ test("server-renders Qi Hao's personal corner", async () => {
   assert.match(html, /href="\.\/posts\/a-weekend-without-a-plan"/);
   assert.match(html, /A weekend without a plan/);
   assert.match(html, /read the post →/);
+  assert.doesNotMatch(html, /The hour before the city wakes/);
+  assert.doesNotMatch(html, /Things I want to remember/);
   assert.doesNotMatch(html, /href="#diary">diary<\/a>/);
-  assert.match(html, /some photos i like/);
+  assert.match(html, /photos i’ve taken/);
+  assert.match(html, /small scenes i noticed and wanted to keep/);
   assert.match(html, /\.\/photos\/light-drawing-figure\.jpg/);
   assert.match(html, /\.\/photos\/light-drawing-face\.jpg/);
+  assert.match(html, /\.\/photos\/leaves-in-the-night\.jpg/);
+  assert.match(html, /\.\/photos\/three-figures\.jpg/);
+  assert.match(html, /\.\/photos\/leaves-in-a-pocket-of-light/);
+  assert.match(html, /\.\/photos\/three-figures-on-a-wooden-wall/);
   assert.doesNotMatch(html, /\.\/photos\/(?:garden|flowers)\.jpg/);
   assert.match(html, /\.\/photos\/drawing-with-light-after-dark/);
   assert.match(html, /things i’ve painted/);
@@ -74,17 +81,27 @@ test("server-renders Qi Hao's personal corner", async () => {
   assert.match(html, /https:\/\/sg\.linkedin\.com\/in\/qihao-liang-3a17ba249/);
   assert.match(html, /mailto:cheehaoliang@gmail\.com/);
   assert.match(html, /get in touch ↗/);
+  assert.match(html, /“The Fight” by Silly Boy Blue/);
+  assert.match(html, /Newcomer \+ Project Hail Mary/);
+  assert.match(html, /simple makeup, very slowly/);
+  assert.match(html, /shu uemura/);
+  assert.match(html, /Fenty Beauty/);
+  assert.match(html, /through SKAM France/);
+  assert.match(html, /2 \(Manon\), 7 \(Tiffany\), and 10 \(Anaïs\)/);
+  assert.match(html, /music\.youtube\.com\/search\?q=silly\+boy\+blue\+the\+fight/);
+  assert.match(html, /https:\/\/www\.france\.tv\/slash\/skam-france\//);
   assert.match(html, /https:\/\/field-notes\.example\/og\.png/);
   assert.doesNotMatch(html, /codex-preview|SkeletonPreview|react-loading-skeleton/);
 });
 
 test("gives each photograph its own shareable story page", async () => {
-  const [streetResponse, lightResponse] = await Promise.all([
+  const [streetResponse, lightResponse, leavesResponse] = await Promise.all([
     render("/photos/haji-lane-after-rain"),
     render("/photos/drawing-with-light-after-dark"),
+    render("/photos/leaves-in-a-pocket-of-light"),
   ]);
 
-  for (const response of [streetResponse, lightResponse]) {
+  for (const response of [streetResponse, lightResponse, leavesResponse]) {
     assert.equal(response.status, 200);
     const html = await response.text();
     assert.match(html, /behind the scene/);
@@ -104,6 +121,15 @@ test("gives each photograph its own shareable story page", async () => {
   assert.match(
     streetHtml,
     /https:\/\/field-notes\.example\/photos\/haji-lane\.jpg/,
+  );
+
+  const leavesHtml = await (
+    await render("/photos/leaves-in-a-pocket-of-light")
+  ).text();
+  assert.match(leavesHtml, /<title>leaves in a pocket of light — Qihao<\/title>/i);
+  assert.match(
+    leavesHtml,
+    /https:\/\/field-notes\.example\/photos\/leaves-in-the-night\.jpg/,
   );
 });
 
@@ -170,6 +196,8 @@ test("keeps the finished site accessible and starter-free", async () => {
   await assert.rejects(access(new URL("../app/_sites-preview", import.meta.url)));
   await access(new URL("../public/og.png", import.meta.url));
   await access(new URL("../public/qihao-portrait.jpg", import.meta.url));
+  await access(new URL("../public/photos/leaves-in-the-night.jpg", import.meta.url));
+  await access(new URL("../public/photos/three-figures.jpg", import.meta.url));
   await access(new URL("../.github/workflows/deploy-pages.yml", import.meta.url));
   await access(root);
 });
