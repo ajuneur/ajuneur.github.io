@@ -357,6 +357,86 @@ footer a:hover {
   font-size: 0.78rem;
 }
 
+.painting-list {
+  display: grid;
+  gap: 30px;
+}
+
+.painting-entry {
+  min-height: 580px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.6fr);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: var(--surface);
+}
+
+.painting-entry:nth-child(even) {
+  grid-template-columns: minmax(280px, 0.6fr) minmax(0, 1.4fr);
+}
+
+.painting-entry:nth-child(even) .painting-frame {
+  order: 2;
+}
+
+.painting-frame {
+  min-width: 0;
+  padding: clamp(14px, 2.2vw, 24px);
+  display: grid;
+  place-items: center;
+  background: #eeede8;
+}
+
+.painting-frame img {
+  width: 100%;
+  height: 100%;
+  max-height: 680px;
+  object-fit: contain;
+}
+
+.painting-notes {
+  min-width: 0;
+  padding: clamp(32px, 5vw, 58px);
+  display: flex;
+  flex-direction: column;
+}
+
+.painting-index {
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.7rem;
+  font-weight: 650;
+}
+
+.painting-notes h3 {
+  margin: 16px 0 0;
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  font-weight: 620;
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+}
+
+.story-space {
+  min-height: 170px;
+  margin-top: auto;
+  padding-top: 24px;
+  border-top: 1px dashed #d7d8d1;
+}
+
+.story-space p {
+  margin: 0 0 10px;
+  color: var(--text);
+  font-size: 0.76rem;
+  font-weight: 600;
+}
+
+.story-space span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
 .now-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -534,6 +614,25 @@ footer > a {
     grid-template-columns: 1fr;
   }
 
+  .painting-entry,
+  .painting-entry:nth-child(even) {
+    min-height: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .painting-entry:nth-child(even) .painting-frame {
+    order: 0;
+  }
+
+  .painting-frame img {
+    max-height: 720px;
+  }
+
+  .story-space {
+    min-height: 150px;
+    margin-top: 70px;
+  }
+
   .diary-card {
     min-height: 220px;
   }
@@ -593,6 +692,27 @@ footer > a {
   .photo-grid figure:nth-child(1) img,
   .photo-grid figure:nth-child(4) img {
     aspect-ratio: 4 / 3;
+  }
+
+  .painting-list {
+    gap: 20px;
+  }
+
+  .painting-entry {
+    border-radius: 22px;
+  }
+
+  .painting-frame {
+    padding: 10px;
+  }
+
+  .painting-notes {
+    padding: 28px 24px;
+  }
+
+  .story-space {
+    min-height: 130px;
+    margin-top: 52px;
   }
 
   .about-card {

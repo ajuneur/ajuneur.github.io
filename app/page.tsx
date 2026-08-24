@@ -45,6 +45,45 @@ const photographs = [
   },
 ];
 
+const paintings = [
+  {
+    src: "./paintings/painting-01.jpg",
+    alt: "A colourful painting of layered leaves and branching forms",
+  },
+  {
+    src: "./paintings/painting-02.jpg",
+    alt: "A vibrant abstract painting with green, yellow, coral, and blue geometric forms",
+  },
+  {
+    src: "./paintings/painting-03.jpg",
+    alt: "A blue whale swimming through waves, orange slices, and small birds",
+  },
+  {
+    src: "./paintings/painting-04.jpg",
+    alt: "An illustrated dinner party with a central crowned figure and surrounding guests",
+  },
+  {
+    src: "./paintings/painting-05.jpg",
+    alt: "An intricate black-and-white drawing of surreal architecture, waves, and checkerboard forms",
+  },
+  {
+    src: "./paintings/painting-06.jpg",
+    alt: "A black-and-white grid of interlocking gears, wheels, and mechanical patterns",
+  },
+  {
+    src: "./paintings/painting-07.jpg",
+    alt: "A black-and-white celestial drawing of mechanical orbits, a crescent moon, and floating fragments",
+  },
+  {
+    src: "./paintings/painting-08.jpg",
+    alt: "A black-and-white circular cityscape filled with waves, roads, gears, and geometric structures",
+  },
+  {
+    src: "./paintings/painting-09.jpg",
+    alt: "A colourful piano surrounded by flowing red, orange, blue, and green patterns",
+  },
+];
+
 const now = [
   ["🎧", "listening", "the same three songs on the bus home"],
   ["📖", "reading", "essays best enjoyed one page at a time"],
@@ -72,6 +111,7 @@ export default function Home() {
         <nav aria-label="Main navigation">
           <a href="#diary">diary</a>
           <a href="#photos">photos</a>
+          <a href="#paintings">paintings</a>
           <a href="#now">right now</a>
           <a href="#about">about</a>
         </nav>
@@ -159,10 +199,54 @@ export default function Home() {
           </div>
         </section>
 
+        <section
+          className="section paintings-section"
+          id="paintings"
+          aria-labelledby="paintings-title"
+        >
+          <div className="section-heading">
+            <div>
+              <p className="section-label">03 / paintings</p>
+              <h2 id="paintings-title">things i’ve painted</h2>
+            </div>
+            <p>
+              nine pieces, with room for the title and little story behind each
+              one.
+            </p>
+          </div>
+
+          <div className="painting-list">
+            {paintings.map((painting, index) => (
+              <article className="painting-entry" key={painting.src}>
+                <div className="painting-frame">
+                  <img
+                    src={painting.src}
+                    alt={painting.alt}
+                    loading="lazy"
+                  />
+                </div>
+                <div className="painting-notes">
+                  <p className="painting-index">
+                    painting {String(index + 1).padStart(2, "0")}
+                  </p>
+                  <h3>title coming soon</h3>
+                  <div className="story-space">
+                    <p>the story behind this piece</p>
+                    <span>
+                      i’ve left this space open for the memory, idea, or moment
+                      that inspired it.
+                    </span>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
         <section className="section" id="now" aria-labelledby="now-title">
           <div className="section-heading">
             <div>
-              <p className="section-label">03 / lately</p>
+              <p className="section-label">04 / lately</p>
               <h2 id="now-title">right now</h2>
             </div>
             <p>the very small life update.</p>
@@ -181,7 +265,7 @@ export default function Home() {
 
         <section className="about-card" id="about" aria-labelledby="about-title">
           <div className="about-heading">
-            <p className="section-label">04 / about</p>
+            <p className="section-label">05 / about</p>
             <h2 id="about-title">hey, i’m qihao.</h2>
             <p className="pronunciation">
               pronounced <strong>Chee Hao</strong> — “Chee” as in cheese.

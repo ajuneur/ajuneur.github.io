@@ -36,6 +36,10 @@ test("server-renders Qi Hao's personal corner", async () => {
   assert.match(html, /life as it happens\./);
   assert.match(html, /recent diary stuff/);
   assert.match(html, /some photos i like/);
+  assert.match(html, /things i’ve painted/);
+  assert.match(html, /painting\s*(?:<!-- -->)?09/);
+  assert.match(html, /title coming soon/);
+  assert.match(html, /\.\/paintings\/painting-09\.jpg/);
   assert.match(html, /hey, i’m qihao\./);
   assert.match(html, /Chee Hao/);
   assert.match(html, /books &amp; marginal notes/);
