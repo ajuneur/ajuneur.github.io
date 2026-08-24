@@ -95,13 +95,13 @@ test("server-renders Qi Hao's personal corner", async () => {
 });
 
 test("gives each photograph its own shareable story page", async () => {
-  const [streetResponse, lightResponse, leavesResponse] = await Promise.all([
-    render("/photos/haji-lane-after-rain"),
+  const [figuresResponse, lightResponse, leavesResponse] = await Promise.all([
+    render("/photos/three-figures-on-a-wooden-wall"),
     render("/photos/drawing-with-light-after-dark"),
     render("/photos/leaves-in-a-pocket-of-light"),
   ]);
 
-  for (const response of [streetResponse, lightResponse, leavesResponse]) {
+  for (const response of [figuresResponse, lightResponse, leavesResponse]) {
     assert.equal(response.status, 200);
     const html = await response.text();
     assert.match(html, /behind the scene/);
@@ -112,15 +112,20 @@ test("gives each photograph its own shareable story page", async () => {
     assert.doesNotMatch(html, /og\.png/);
   }
 
-  const streetHtml = await (await render("/photos/haji-lane-after-rain")).text();
-  assert.match(streetHtml, /<title>haji lane, after rain — Qihao<\/title>/i);
+  const figuresHtml = await (
+    await render("/photos/three-figures-on-a-wooden-wall")
+  ).text();
   assert.match(
-    streetHtml,
-    /A street scene I wanted to keep: colour, quiet, and the softened light after rain\./,
+    figuresHtml,
+    /<title>three figures on a wooden wall — Qihao<\/title>/i,
   );
   assert.match(
-    streetHtml,
-    /https:\/\/field-notes\.example\/photos\/haji-lane\.jpg/,
+    figuresHtml,
+    /A trio of simple white figures on wood—ordinary signage made unexpectedly graphic\./,
+  );
+  assert.match(
+    figuresHtml,
+    /https:\/\/field-notes\.example\/photos\/three-figures\.jpg/,
   );
 
   const leavesHtml = await (

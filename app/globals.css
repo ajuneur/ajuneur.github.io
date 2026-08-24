@@ -470,11 +470,11 @@ footer a:hover {
 .now-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  align-items: start;
   gap: 14px;
 }
 
 .now-card {
-  min-height: 260px;
   padding: 24px;
   display: flex;
   flex-direction: column;
@@ -523,8 +523,7 @@ footer a:hover {
 
 .now-card > a {
   width: fit-content;
-  margin-top: auto;
-  padding-top: 20px;
+  margin-top: 20px;
   color: var(--accent);
   font-size: 0.76rem;
   font-weight: 650;
