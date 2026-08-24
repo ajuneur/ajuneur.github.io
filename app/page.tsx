@@ -29,7 +29,7 @@ const paintings = [
     src: "./paintings/painting-01.jpg",
     alt: "A colourful painting of layered leaves and branching forms",
     title: "Seasons",
-    story: "I collected leaves from four different seasons; I painted the background and stuck real leaves on top of the background",
+    story: "Leaves gathered across four seasons, preserved in a world of paint. I painted the background, then layered real leaves over it, allowing nature and its representation to overlap. Somewhere between two and three dimensions, the seasons seem to fold into one another—a small reflection on time, change, and what remains.",
   },
   {
     src: "./paintings/painting-02.jpg",
@@ -223,12 +223,12 @@ export default function Home() {
                   <p className="painting-index">
                     painting {String(index + 1).padStart(2, "0")}
                   </p>
-                  <h3>title coming soon</h3>
+                  <h3>{painting.title || "title coming soon"}</h3>
                   <div className="story-space">
                     <p>the story behind this piece</p>
                     <span>
-                      i’ve left this space open for the memory, idea, or moment
-                      that inspired it.
+                      {painting.story ||
+                        "i’ve left this space open for the memory, idea, or moment that inspired it."}
                     </span>
                   </div>
                 </div>
