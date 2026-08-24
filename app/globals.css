@@ -359,30 +359,24 @@ footer a:hover {
 
 .painting-list {
   display: grid;
-  gap: 30px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
 }
 
 .painting-entry {
-  min-height: 580px;
-  display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.6fr);
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   border: 1px solid var(--line);
-  border-radius: 28px;
+  border-radius: 22px;
   background: var(--surface);
-}
-
-.painting-entry:nth-child(even) {
-  grid-template-columns: minmax(280px, 0.6fr) minmax(0, 1.4fr);
-}
-
-.painting-entry:nth-child(even) .painting-frame {
-  order: 2;
 }
 
 .painting-frame {
   min-width: 0;
-  padding: clamp(14px, 2.2vw, 24px);
+  aspect-ratio: 1;
+  padding: 12px;
   display: grid;
   place-items: center;
   background: #eeede8;
@@ -391,13 +385,13 @@ footer a:hover {
 .painting-frame img {
   width: 100%;
   height: 100%;
-  max-height: 680px;
   object-fit: contain;
 }
 
 .painting-notes {
+  min-height: 250px;
   min-width: 0;
-  padding: clamp(32px, 5vw, 58px);
+  padding: 24px;
   display: flex;
   flex-direction: column;
 }
@@ -410,17 +404,17 @@ footer a:hover {
 }
 
 .painting-notes h3 {
-  margin: 16px 0 0;
-  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  margin: 12px 0 0;
+  font-size: 1.4rem;
   font-weight: 620;
   line-height: 1.08;
   letter-spacing: -0.045em;
 }
 
 .story-space {
-  min-height: 170px;
+  min-height: 120px;
   margin-top: auto;
-  padding-top: 24px;
+  padding-top: 18px;
   border-top: 1px dashed #d7d8d1;
 }
 
@@ -614,23 +608,8 @@ footer > a {
     grid-template-columns: 1fr;
   }
 
-  .painting-entry,
-  .painting-entry:nth-child(even) {
-    min-height: auto;
-    grid-template-columns: 1fr;
-  }
-
-  .painting-entry:nth-child(even) .painting-frame {
-    order: 0;
-  }
-
-  .painting-frame img {
-    max-height: 720px;
-  }
-
-  .story-space {
-    min-height: 150px;
-    margin-top: 70px;
+  .painting-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .diary-card {
@@ -695,6 +674,7 @@ footer > a {
   }
 
   .painting-list {
+    grid-template-columns: 1fr;
     gap: 20px;
   }
 
@@ -703,16 +683,17 @@ footer > a {
   }
 
   .painting-frame {
-    padding: 10px;
+    max-height: 420px;
+    padding: 12px;
   }
 
   .painting-notes {
-    padding: 28px 24px;
+    min-height: 235px;
+    padding: 24px;
   }
 
   .story-space {
-    min-height: 130px;
-    margin-top: 52px;
+    min-height: 115px;
   }
 
   .about-card {
