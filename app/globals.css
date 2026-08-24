@@ -720,16 +720,29 @@ footer a:hover {
 }
 
 .social-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
   color: var(--accent);
   font-size: 0.85rem;
   font-weight: 600;
-  padding-bottom: 1px;
+  padding-bottom: 3px;
   border-bottom: 1px solid currentColor;
-  transition: color 160ms ease;
+  transition:
+    color 160ms ease,
+    transform 160ms ease;
+}
+
+.social-links a svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 1.8;
+  flex-shrink: 0;
 }
 
 .social-links a:hover {
   color: var(--text);
+  transform: translateY(-1px);
 }
 
 footer {

@@ -35,8 +35,11 @@ test("server-renders Qi Hao's personal corner", async () => {
   assert.match(html, /ajuneur · made quietly in singapore/);
   assert.match(html, /「/);
   assert.match(html, /」/);
-  assert.match(html, /just keeping track of/);
-  assert.match(html, /life as it happens\./);
+  assert.match(html, /the mini archive of/);
+  assert.match(html, /me being MENTALLY alive/);
+  assert.match(html, /Qihao on Instagram/);
+  assert.match(html, /Qihao on LinkedIn/);
+  assert.match(html, /Get in touch with Qihao by email/);
   assert.match(html, /id="top"/);
   assert.ok(html.indexOf('id="about"') < html.indexOf('class="hero"'));
   assert.match(html, /id="about"[\s\S]*?src="\.\/qihao-portrait\.jpg"/);
@@ -82,9 +85,11 @@ test("server-renders Qi Hao's personal corner", async () => {
   assert.match(html, /painting\s*(?:<!-- -->)?09/);
   assert.match(html, /<h3>Seasons<\/h3>/);
   assert.match(html, /four different seasons/);
-  assert.match(html, /title coming soon/);
+  assert.match(html, /<h3>Junction of Time<\/h3>/);
+  assert.match(html, /<h3>Whirlpool of Melody<\/h3>/);
+  assert.doesNotMatch(html, /title coming soon/);
   assert.match(html, /\.\/paintings\/painting-09\.jpg/);
-  assert.match(html, /hey! i am Qihao Liang\./);
+  assert.match(html, /hey! i am qihao liang\./);
   assert.match(html, /he\/they/);
   assert.match(html, /Chee Hao/);
   assert.match(html, /currently doing a PhD in computer science/);
@@ -100,7 +105,7 @@ test("server-renders Qi Hao's personal corner", async () => {
   assert.match(html, /https:\/\/www\.instagram\.com\/ajuneur\//);
   assert.match(html, /https:\/\/sg\.linkedin\.com\/in\/qihao-liang-3a17ba249/);
   assert.match(html, /mailto:cheehaoliang@gmail\.com/);
-  assert.match(html, /get in touch ↗/);
+  assert.match(html, /<span>get in touch<\/span>/);
   assert.match(html, /“The Fight” by Silly Boy Blue/);
   assert.match(html, /\.\/now\/the-fight\.jpg/);
   assert.match(html, /Newcomer \+ Project Hail Mary/);

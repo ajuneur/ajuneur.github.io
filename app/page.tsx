@@ -1,3 +1,5 @@
+import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { FiMail } from "react-icons/fi";
 import { photographs } from "./photo-data";
 import { posts } from "./post-data";
 
@@ -216,7 +218,8 @@ export default function Home() {
                   rel="noreferrer"
                   aria-label="Qihao on Instagram (opens in a new tab)"
                 >
-                  instagram ↗
+                  <FaInstagram aria-hidden="true" />
+                  <span>instagram</span>
                 </a>
                 <a
                   href="https://sg.linkedin.com/in/qihao-liang-3a17ba249"
@@ -224,13 +227,15 @@ export default function Home() {
                   rel="noreferrer"
                   aria-label="Qihao on LinkedIn (opens in a new tab)"
                 >
-                  linkedin ↗
+                  <FaLinkedinIn aria-hidden="true" />
+                  <span>linkedin</span>
                 </a>
                 <a
                   href="mailto:cheehaoliang@gmail.com"
-                  aria-label="Email Qihao at cheehaoliang@gmail.com"
+                  aria-label="Get in touch with Qihao by email"
                 >
-                  get in touch ↗
+                  <FiMail aria-hidden="true" />
+                  <span>get in touch</span>
                 </a>
               </div>
             </div>
