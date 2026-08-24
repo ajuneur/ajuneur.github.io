@@ -159,6 +159,12 @@ export default function Home() {
                 >
                   linkedin ↗
                 </a>
+                <a
+                  href="mailto:cheehaoliang@gmail.com"
+                  aria-label="Email Qihao at cheehaoliang@gmail.com"
+                >
+                  cheehaoliang@gmail.com ↗
+                </a>
               </div>
             </div>
           </div>
