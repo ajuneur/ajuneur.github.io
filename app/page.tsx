@@ -73,7 +73,7 @@ const paintings = [
     src: "./paintings/painting-02.jpg",
     alt: "A vibrant abstract painting with green, yellow, coral, and blue geometric forms",
     title: "Junction of Time",
-    story: "This painting was inspired by the idea of time as a junction, where different moments and experiences intersect. The geometric forms represent the structured nature of time, while the vibrant colors evoke the emotions and memories that color our perception of it. The overlapping shapes suggest the complexity and interconnectedness of our experiences.",
+    story: "This painting was inspired by the idea of time as a junction, where different moments and experiences intersect. The geometric forms represent the structured nature of time, while the vibrant colours evoke the emotions and memories that colour our perception of it. The overlapping shapes suggest the complexity and interconnectedness of our experiences.",
   },
   {
     src: "./paintings/painting-03.jpg",
@@ -85,7 +85,7 @@ const paintings = [
     src: "./paintings/painting-04.jpg",
     alt: "An illustrated dinner party with a central crowned figure and surrounding guests",
     title: "The Dinner Party",
-    story: "This painting depicts a whimsical dinner party where each guest represents a different aspect of human nature. The central crowned figure embodies the host, while the surrounding guests showcase a variety of personalities and perspectives. The vibrant colors and dynamic composition create a sense of movement and conversation.",
+    story: "This painting depicts a whimsical dinner party where each guest represents a different aspect of human nature. The central crowned figure embodies the host, while the surrounding guests showcase a variety of personalities and perspectives. The vibrant colours and dynamic composition create a sense of movement and conversation.",
   },
   {
     src: "./paintings/painting-05.jpg",
@@ -115,7 +115,7 @@ const paintings = [
     src: "./paintings/painting-09.jpg",
     alt: "A colourful piano surrounded by flowing red, orange, blue, and green patterns",
     title: "Whirlpool of Melody",
-    story: "This is a birthday gift for my friend who is a good pianist. The piano is surrounded by a whirlpool of vibrant colors, representing the flow of music and the emotions it evokes. The patterns suggest the movement and energy of a melody, while the colors reflect the joy and passion that music brings to our lives.",
+    story: "This is a birthday gift for my friend who is a good pianist. The piano is surrounded by a whirlpool of vibrant colours, representing the flow of music and the emotions it evokes. The patterns suggest the movement and energy of a melody, while the colours reflect the joy and passion that music brings to our lives.",
   },
 ];
 
@@ -457,8 +457,8 @@ export default function Home() {
       </main>
 
       <footer>
-        <p>ajuneur · made quietly in singapore · 2026</p>
-        <p className="footer-note">photos &amp; artwork by qihao</p>
+        <p>cheehao · made quietly in singapore · 2026</p>
+        <p className="footer-note">photos, posts, &amp; artwork by qihao; code by qihao&amp;codex</p>
         <a href="#top">back to top ↑</a>
       </footer>
     </div>
