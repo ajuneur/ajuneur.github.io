@@ -37,6 +37,8 @@ This project includes an automatic GitHub Pages workflow.
 Every later push to `main` rebuilds and republishes the site. The workflow
 detects the repository name, so it works for both
 `username.github.io` repositories and regular project repositories.
+The published package also includes `robots.txt` and a sitemap covering every
+post and photo story.
 
 ## Useful commands
 

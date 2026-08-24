@@ -166,6 +166,27 @@ try {
     await writeFile(path.join(pageDir, "index.html"), postDocument);
   }
 
+  const siteUrl = publicSiteUrl();
+  if (siteUrl) {
+    const pagePaths = [
+      "",
+      ...photographs.map((photo) => `photos/${photo.slug}/`),
+      ...posts.map((post) => `posts/${post.slug}/`),
+    ];
+    const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${pagePaths.map((pathname) => `  <url><loc>${siteUrl}${pathname}</loc></url>`).join("\n")}
+</urlset>
+`;
+    const robots = `User-agent: *
+Allow: /
+Sitemap: ${siteUrl}sitemap.xml
+`;
+
+    await writeFile(path.join(outputDir, "sitemap.xml"), sitemap);
+    await writeFile(path.join(outputDir, "robots.txt"), robots);
+  }
+
   const cssManifest = JSON.parse(
     await readFile(path.join(outputDir, ".vite", "manifest.json"), "utf8"),
   );
