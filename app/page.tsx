@@ -138,11 +138,11 @@ export default function Home() {
           <span>「</span>qh<span>.</span><span>」</span>
         </a>
         <nav aria-label="Main navigation">
+          <a href="#about">about</a>
           <a href="#posts">posts</a>
           <a href="#photos">photos</a>
           <a href="#paintings">paintings</a>
           <a href="#now">right now</a>
-          <a href="#about">about</a>
         </nav>
         <a className="say-hi" href="#about">
           about me <span aria-hidden="true">↓</span>
