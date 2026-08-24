@@ -183,22 +183,27 @@ export default function Home() {
           </div>
           <div className="about-copy">
             <p>
-              i’m currently doing a PhD in computer science, but i LITERALLY don’t
-              want research to inundate every corner of my life. i made this
-              little webpage to give the rest of me some room again--to notice
-              things, make things, and keep life feeling alive.
+              i’m currently doing a phd in computer science, but i LITERALLY don’t 
+              want research to take over every corner of my life. i made this little 
+              webpage to give the rest of me some room again -- to notice things, make 
+              things, wander around, and just keep life feeling alive.
             </p>
             <p>
-              i’m endlessly curious about the little things that make life feel
-              bigger. you’ll usually find me halfway through a book, watching a
-              movie i’ll think about for days, making little bits of music, or
-              trying to understand the world through a new language.
+              i’m curious about pretty much everything, especially the little things that 
+              somehow make life feel bigger. you’ll usually find me halfway through a book, 
+              watching a movie i’ll keep thinking about for days, making random bits of music, 
+              learning a new language, or just walking around somewhere with my camera.
             </p>
             <p>
-              this corner of the internet is where i collect the things that i
-              want to remember: photographs, ordinary days, neighbourhood
-              walks, good light, and whatever i’m learning and thinking about
-              lately.
+              i also LOVE travelling!! i think my favourite part is just wandering around a 
+              city and seeing what everyday life feels like there – the streets, the neighbourhoods, 
+              the public transport, the random little shops, all of it. favourite cities so far: taipei, 
+              perth, and montréal (but montréal specifically in august lol).
+            </p>
+            <p>
+              this little corner of the internet is basically where i keep things i don’t want to forget
+               -- photos, ordinary days, neighbourhood walks, good light, places i’ve been, things i’ve 
+               made, and whatever i happen to be learning or thinking about lately.
             </p>
 
             <div className="interest-list" aria-label="Things I like">
