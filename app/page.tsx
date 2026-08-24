@@ -19,14 +19,6 @@ const diaryEntries = [
       "Mum's voice note, rain against the kitchen window, and a book that arrived at exactly the right time.",
     tag: "small things",
   },
-  {
-    slug: undefined,
-    date: "21 Jul 2026",
-    title: "A weekend without a plan",
-    excerpt:
-      "Two buses, one accidental garden, and the kind of afternoon that asks nothing from you.",
-    tag: "out & about",
-  },
 ];
 
 const paintings = [
@@ -249,7 +241,11 @@ export default function Home() {
                 <h3>{entry.title}</h3>
                 <p>{entry.excerpt}</p>
                 {entry.slug ? (
-                  <span className="card-read">read the dream →</span>
+                  <span className="card-read">
+                    {entry.tag === "dream"
+                      ? "read the dream →"
+                      : "read the post →"}
+                  </span>
                 ) : null}
                 </>
               );

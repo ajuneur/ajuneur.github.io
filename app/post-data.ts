@@ -54,6 +54,27 @@ export const posts: Post[] = [
       "Alex left the chapel and knelt to the sky. He tried to pray, but every prayer began with Pablo and ended there. The clouds were gone.",
     ],
   },
+  {
+    slug: "a-weekend-without-a-plan",
+    date: "23 Aug 2026",
+    title: "A weekend without a plan",
+    excerpt:
+      "VivoCity, a carefully timed bus transfer, Funan, and a nearly sun-free route beneath the city.",
+    description:
+      "A weekend loop through VivoCity, Funan, Raffles City, Suntec, and Millenia Walk—with as little ultraviolet exposure as possible.",
+    tag: "weekend loop",
+    note: "my weekends have a habit of ending up at Funan.",
+    body: [
+      "A weekend without a plan usually begins with the MRT to VivoCity. I do not necessarily need anything there; the point is simply to arrive, wander into whichever shops look interesting, and do some random shopping without a list telling me when I am finished.",
+      "There is something pleasant about moving through a mall with no particular target. I can look at things I will probably never buy, change my mind three times about where to eat, and let the air-conditioning decide how long I stay.",
+      "Then the day develops its only real deadline: I have to catch the bus before the 45-minute transfer window ends. That small countdown gives the afternoon a strange sense of purpose. I leave VivoCity, get on the bus in time, and continue towards Funan.",
+      "Funan is where my weekends seem to go, whether I plan for it or not. Perhaps I just enjoy the familiarity of it—the feeling that I can walk around without having to work out what comes next. I browse, circle the floors, and keep going until I am thoroughly fed up with Funan Mall.",
+      "At that point, the route continues downstairs. I take the underground walkway towards Raffles City, and from there the underground connections carry me onwards to Suntec and Millenia Walk. It feels like a second, climate-controlled Singapore hidden beneath the first one.",
+      "This is, obviously, the perfect route for a guy who is basically allergic to ultraviolet exposure. While everyone above ground is negotiating heat, glare, and the possibility of becoming sunburnt, I can travel across a surprising portion of the city without having a serious encounter with the sun.",
+      "There is no grand discovery at the end of this journey. Most of the pleasure comes from continuing to move without needing to arrive anywhere important: MRT, shops, bus, Funan, then the long underground drift across the city.",
+      "So perhaps it is not really a weekend without a plan. It is more like a plan I have repeated so often that it no longer feels like one—a familiar little loop, performed mostly indoors, that lets the weekend pass at exactly the speed I want.",
+    ],
+  },
 ];
 
 export function getPost(slug: string) {

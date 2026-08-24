@@ -45,6 +45,9 @@ test("server-renders Qi Hao's personal corner", async () => {
   assert.match(html, /href="\.\/posts\/the-chapel-and-the-cliff"/);
   assert.match(html, /The chapel and the cliff/);
   assert.match(html, /read the dream →/);
+  assert.match(html, /href="\.\/posts\/a-weekend-without-a-plan"/);
+  assert.match(html, /A weekend without a plan/);
+  assert.match(html, /read the post →/);
   assert.doesNotMatch(html, /href="#diary">diary<\/a>/);
   assert.match(html, /some photos i like/);
   assert.match(html, /\.\/photos\/light-drawing-figure\.jpg/);
@@ -123,6 +126,22 @@ test("publishes the Barcelona dream as its own post", async () => {
   assert.match(html, /The love remained exactly where it had been/);
   assert.match(html, /He had only destroyed the person/);
   assert.match(html, /The clouds were gone\./);
+  assert.match(html, /id="main"/);
+  assert.doesNotMatch(html, /og\.png/);
+});
+
+test("publishes the mall-hopping weekend as its own post", async () => {
+  const response = await render("/posts/a-weekend-without-a-plan");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /<title>A weekend without a plan — Qihao<\/title>/i);
+  assert.match(html, /A weekend loop through VivoCity, Funan, Raffles City/);
+  assert.match(html, /my weekends have a habit of ending up at Funan/);
+  assert.match(html, /45-minute transfer window/);
+  assert.match(html, /Suntec and Millenia Walk/);
+  assert.match(html, /basically allergic to ultraviolet exposure/);
+  assert.match(html, /a plan I have repeated so often/);
   assert.match(html, /id="main"/);
   assert.doesNotMatch(html, /og\.png/);
 });
