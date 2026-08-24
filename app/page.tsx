@@ -96,7 +96,7 @@ const paintings = [
   {
     src: "./paintings/painting-06.jpg",
     alt: "A black-and-white grid of interlocking gears, wheels, and mechanical patterns",
-    title: "Time Machine",
+    title: "Rembobinez",
     story: "Sometime I wish I could rewind the time (rembobiner) so that I can undo or redo something. However, that would only cause paradox. I will not choose to return to the past, but I will choose to move forward and embrace the present. The interlocking gears and mechanical patterns represent the intricate workings of time and the inevitability of change.",
   },
   {
