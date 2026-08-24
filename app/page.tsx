@@ -13,7 +13,7 @@ const now = [
     images: [
       {
         src: "./now/the-fight.jpg",
-        alt: "A still from Silly Boy Blue’s The Fight music video",
+        alt: "A still from Silly Boy Blue's The Fight music video",
       },
     ],
     label: "favourite song",
@@ -169,7 +169,7 @@ export default function Home() {
                 height="1200"
               />
               <figcaption>
-                perth, australia -- the best sushi i’ve ever had; my friend
+                perth, australia -- the best sushi i've ever had; my friend
                 swears by the udon. genuinely not an ad, hahaha. {" "}
                 <a
                   href="https://maps.app.goo.gl/KoSfhf5JGTH3pRUA8?g_st=ic"
@@ -184,15 +184,15 @@ export default function Home() {
           </div>
           <div className="about-copy">
             <p>
-              i’m currently doing a phd in computer science, but i LITERALLY don’t 
+              i'm currently doing a phd in computer science, but i LITERALLY don't 
               want research to inundate every corner of my life. i made this little 
               webpage to give the rest of me some room again -- to notice things, make 
               things, wander around, and just keep life feeling alive.
             </p>
             <p>
-              i’m curious about pretty much everything, especially the little things that 
-              somehow make life feel bigger. you’ll usually find me halfway through a book, 
-              watching a movie i’ll keep thinking about for days, making random bits of music, 
+              i'm curious about pretty much everything, especially the little things that 
+              somehow make life feel bigger. you'll usually find me halfway through a book, 
+              watching a movie i'll keep thinking about for days, making random bits of music, 
               learning a new language, or just walking around somewhere with my camera.
             </p>
             <p>
@@ -202,8 +202,8 @@ export default function Home() {
               perth, and montréal (ONLY in july/august LOL).
             </p>
             <p>
-              this little corner of the internet is basically where i keep things i don’t want to forget
-               -- photos, ordinary days, neighbourhood walks, good light, places i’ve been, things i’ve 
+              this little corner of the internet is basically where i keep things i don't want to forget
+               -- photos, ordinary days, neighbourhood walks, good light, places i've been, things i've 
                made, and whatever i happen to be learning or thinking about lately.
             </p>
 
@@ -250,13 +250,13 @@ export default function Home() {
 
         <section className="hero" aria-labelledby="hero-title">
           <div className="hero-copy">
-            <p className="hello">hello, i’m qi hao <span aria-hidden="true">👋</span></p>
+            <p className="hello">hello, i'm qi hao <span aria-hidden="true">👋</span></p>
             <h1 id="hero-title">
               the mini archive of <em>me being MENTALLY alive</em>
             </h1>
             <p className="hero-intro">
               this is my little corner for posts, photos, and random
-              things i don’t want to forget.
+              things i don't want to forget.
             </p>
             <div className="hero-links">
               <a className="primary-link" href="#posts">
@@ -275,7 +275,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="hero-scrapbook" aria-label="A few things from Qihao’s life">
+          <div className="hero-scrapbook" aria-label="A few things from Qihao's life">
             <a
               className="hero-tile hero-tile-main"
               href="./posts/the-ring-i-bought-for-free-delivery"
@@ -296,7 +296,7 @@ export default function Home() {
             <a className="hero-tile" href="#paintings">
               <img
                 src="./paintings/painting-09.jpg"
-                alt="Qihao’s colourful painting of a piano surrounded by flowing patterns"
+                alt="Qihao's colourful painting of a piano surrounded by flowing patterns"
               />
               <span><small>painting</small>colour + music</span>
             </a>
@@ -340,7 +340,7 @@ export default function Home() {
           <div className="section-heading">
             <div>
               <p className="section-label">02 / photos</p>
-              <h2 id="photos-title">photos i’ve taken</h2>
+              <h2 id="photos-title">photos i've taken</h2>
             </div>
             <p>small scenes i noticed and wanted to keep.</p>
           </div>
@@ -376,7 +376,7 @@ export default function Home() {
           <div className="section-heading">
             <div>
               <p className="section-label">03 / paintings</p>
-              <h2 id="paintings-title">things i’ve painted</h2>
+              <h2 id="paintings-title">things i've painted</h2>
             </div>
             <p>
               nine pieces, with room for the title and little story behind each
@@ -403,7 +403,7 @@ export default function Home() {
                     <p>the story behind this piece</p>
                     <span>
                       {painting.story ||
-                        "i’ve left this space open for the memory, idea, or moment that inspired it."}
+                        "i've left this space open for the memory, idea, or moment that inspired it."}
                     </span>
                   </div>
                 </div>

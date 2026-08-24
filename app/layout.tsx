@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { headers } from "next/headers";
 import "./globals.css";
 
-const title = "ajuneur — Qihao’s little corner";
+const title = "ajuneur — Qihao's little corner";
 const description =
-  "Posts, photographs, paintings, and little things from Qihao’s life lately.";
+  "Posts, photographs, paintings, and little things from Qihao's life lately.";
 
 export async function generateMetadata(): Promise<Metadata> {
   const requestHeaders = await headers();
