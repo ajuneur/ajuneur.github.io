@@ -70,34 +70,50 @@ const paintings = [
   {
     src: "./paintings/painting-02.jpg",
     alt: "A vibrant abstract painting with green, yellow, coral, and blue geometric forms",
+    title: "Junction of Time",
+    story: "This painting was inspired by the idea of time as a junction, where different moments and experiences intersect. The geometric forms represent the structured nature of time, while the vibrant colors evoke the emotions and memories that color our perception of it. The overlapping shapes suggest the complexity and interconnectedness of our experiences.",
   },
   {
     src: "./paintings/painting-03.jpg",
     alt: "A blue whale swimming through waves, orange slices, and small birds",
+    title: "Summer in the Fairyland",
+    story: "This piece captures the whimsical essence of summer, blending elements of nature and imagination. The blue whale symbolises freedom and exploration, while the orange slices and birds add a playful touch. The waves represent the ebb and flow of life, reminding us to embrace the joy and spontaneity of the season.",
   },
   {
     src: "./paintings/painting-04.jpg",
     alt: "An illustrated dinner party with a central crowned figure and surrounding guests",
+    title: "The Dinner Party",
+    story: "This painting depicts a whimsical dinner party where each guest represents a different aspect of human nature. The central crowned figure embodies the host, while the surrounding guests showcase a variety of personalities and perspectives. The vibrant colors and dynamic composition create a sense of movement and conversation.",
   },
   {
     src: "./paintings/painting-05.jpg",
     alt: "An intricate black-and-white drawing of surreal architecture, waves, and checkerboard forms",
+    title: "Labyrinth",
+    story: "It's my mind of getting lost in the maze of thoughts and ideas. The surreal architecture and checkerboard patterns represent the complexity of navigating through one's own mind, while the waves symbolise the constant flow of emotions and experiences that shape our perceptions.",
   },
   {
     src: "./paintings/painting-06.jpg",
     alt: "A black-and-white grid of interlocking gears, wheels, and mechanical patterns",
+    title: "Time Machine",
+    story: "Sometime I wish I could rewind the time (rembobiner) so that I can undo or redo something. However, that would only cause paradox. I will not choose to return to the past, but I will choose to move forward and embrace the present. The interlocking gears and mechanical patterns represent the intricate workings of time and the inevitability of change.",
   },
   {
     src: "./paintings/painting-07.jpg",
     alt: "A black-and-white celestial drawing of mechanical orbits, a crescent moon, and floating fragments",
+    title: "Let Go of the Past",
+    story: "I was trapped in those memories that I wish I could undo. Those debris floating in the space means that I have to let go of the past and move on. The mechanical orbits and celestial elements represent the passage of time and the need to release what no longer serves us, allowing for growth and new experiences.",
   },
   {
     src: "./paintings/painting-08.jpg",
     alt: "A black-and-white circular cityscape filled with waves, roads, gears, and geometric structures",
+    title: "Paradox City",
+    story: "My imagination of what it would be like if time were rewound and everything were trapped in a paradox. The circular cityscape represents the cyclical nature of time, while the waves, roads, and gears symbolise the interconnectedness of our experiences. The geometric structures suggest the complexity and breakage of logic. It's a warning not to try to undo the past.",
   },
   {
     src: "./paintings/painting-09.jpg",
     alt: "A colourful piano surrounded by flowing red, orange, blue, and green patterns",
+    title: "Whirlpool of Melody",
+    story: "This is a birthday gift for my friend who is a good pianist. The piano is surrounded by a whirlpool of vibrant colors, representing the flow of music and the emotions it evokes. The patterns suggest the movement and energy of a melody, while the colors reflect the joy and passion that music brings to our lives.",
   },
 ];
 
