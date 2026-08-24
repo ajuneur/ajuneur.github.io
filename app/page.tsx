@@ -51,6 +51,13 @@ const now = [
   ["🌱", "learning", "a photo doesn’t need to explain itself"],
 ];
 
+const interests = [
+  ["📚", "books & marginal notes"],
+  ["🎬", "films that linger"],
+  ["🎹", "making little bits of music"],
+  ["🗣️", "learning how languages see the world"],
+];
+
 export default function Home() {
   return (
     <div className="site-shell">
@@ -68,8 +75,8 @@ export default function Home() {
           <a href="#now">right now</a>
           <a href="#about">about</a>
         </nav>
-        <a className="say-hi" href="mailto:hello@example.com">
-          say hi <span aria-hidden="true">↗</span>
+        <a className="say-hi" href="#about">
+          about me <span aria-hidden="true">↓</span>
         </a>
       </header>
 
@@ -173,19 +180,55 @@ export default function Home() {
         </section>
 
         <section className="about-card" id="about" aria-labelledby="about-title">
-          <div>
+          <div className="about-heading">
             <p className="section-label">04 / about</p>
-            <h2 id="about-title">why this exists</h2>
+            <h2 id="about-title">hey, i’m qihao.</h2>
+            <p className="pronunciation">
+              pronounced <strong>Chee Hao</strong> — “Chee” as in cheese.
+            </p>
           </div>
           <div className="about-copy">
             <p>
-              life moves pretty quickly, so i made this place to slow it down a
-              bit — neighbourhood walks, unexpected conversations, good light,
-              and everything in between.
+              i’m endlessly curious about the little things that make life feel
+              bigger. you’ll usually find me halfway through a book, watching a
+              movie i’ll think about for days, making little bits of music, or
+              trying to understand the world through a new language.
             </p>
-            <a href="mailto:hello@example.com">
-              drop me a note <span aria-hidden="true">↗</span>
-            </a>
+            <p>
+              this corner of the internet is where i collect the things i want
+              to remember: photographs, ordinary days, neighbourhood walks,
+              good light, and whatever i’m learning lately.
+            </p>
+
+            <div className="interest-list" aria-label="Things I like">
+              {interests.map(([emoji, interest]) => (
+                <span key={interest}>
+                  <span aria-hidden="true">{emoji}</span> {interest}
+                </span>
+              ))}
+            </div>
+
+            <div className="social-area">
+              <p>find me online</p>
+              <div className="social-links" aria-label="Social links">
+                <a
+                  href="https://www.instagram.com/ajuneur/"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Qihao on Instagram (opens in a new tab)"
+                >
+                  instagram ↗
+                </a>
+                <a
+                  href="https://sg.linkedin.com/in/qihao-liang-3a17ba249"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Qihao on LinkedIn (opens in a new tab)"
+                >
+                  linkedin ↗
+                </a>
+              </div>
+            </div>
           </div>
         </section>
       </main>

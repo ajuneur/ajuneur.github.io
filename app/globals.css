@@ -408,19 +408,72 @@ footer a:hover {
   background: var(--accent-soft);
 }
 
-.about-copy > p {
-  margin: 0 0 26px;
-  font-size: clamp(1.05rem, 2vw, 1.3rem);
+.about-heading {
+  align-self: start;
 }
 
-.about-copy a {
-  display: inline-flex;
-  gap: 8px;
-  padding-bottom: 2px;
-  border-bottom: 1px solid currentColor;
+.pronunciation {
+  max-width: 250px;
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.pronunciation strong {
+  color: var(--text);
+  font-weight: 620;
+}
+
+.about-copy > p {
+  margin: 0 0 18px;
+  font-size: clamp(1.02rem, 1.7vw, 1.2rem);
+}
+
+.interest-list {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.interest-list > span {
+  padding: 8px 11px;
+  border: 1px solid rgba(110, 129, 106, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.45);
+  color: #596555;
+  font-size: 0.76rem;
+}
+
+.social-area {
+  margin-top: 38px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(110, 129, 106, 0.2);
+}
+
+.social-area > p {
+  margin: 0 0 11px;
+  color: var(--muted);
+  font-size: 0.7rem;
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.social-links a {
   color: var(--accent);
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   font-weight: 600;
+  padding-bottom: 1px;
+  border-bottom: 1px solid currentColor;
+  transition: color 160ms ease;
+}
+
+.social-links a:hover {
+  color: var(--text);
 }
 
 footer {

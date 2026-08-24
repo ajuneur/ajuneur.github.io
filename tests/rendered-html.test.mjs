@@ -36,7 +36,12 @@ test("server-renders Qi Hao's personal corner", async () => {
   assert.match(html, /life as it happens\./);
   assert.match(html, /recent diary stuff/);
   assert.match(html, /some photos i like/);
-  assert.match(html, /why this exists/);
+  assert.match(html, /hey, i’m qihao\./);
+  assert.match(html, /Chee Hao/);
+  assert.match(html, /books &amp; marginal notes/);
+  assert.match(html, /making little bits of music/);
+  assert.match(html, /https:\/\/www\.instagram\.com\/ajuneur\//);
+  assert.match(html, /https:\/\/sg\.linkedin\.com\/in\/qihao-liang-3a17ba249/);
   assert.match(html, /https:\/\/field-notes\.example\/og\.png/);
   assert.doesNotMatch(html, /codex-preview|SkeletonPreview|react-loading-skeleton/);
 });
