@@ -42,6 +42,9 @@ test("server-renders Qi Hao's personal corner", async () => {
   assert.match(html, /src="\.\/photos\/desk\.jpg"/);
   assert.match(html, /href="#posts">posts<\/a>/);
   assert.match(html, /recent posts/);
+  assert.match(html, /href="\.\/posts\/the-chapel-and-the-cliff"/);
+  assert.match(html, /The chapel and the cliff/);
+  assert.match(html, /read the dream →/);
   assert.doesNotMatch(html, /href="#diary">diary<\/a>/);
   assert.match(html, /some photos i like/);
   assert.match(html, /\.\/photos\/light-drawing-figure\.jpg/);
@@ -99,6 +102,22 @@ test("gives each photograph its own shareable story page", async () => {
     streetHtml,
     /https:\/\/field-notes\.example\/photos\/haji-lane\.jpg/,
   );
+});
+
+test("publishes the Barcelona dream as its own post", async () => {
+  const response = await render("/posts/the-chapel-and-the-cliff");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /<title>The chapel and the cliff — Qihao<\/title>/i);
+  assert.match(html, /where tenderness is transformed by shame into something fatal/);
+  assert.match(html, /one interesting dream/);
+  assert.match(html, /The morning in the forest had felt innocent/);
+  assert.match(html, /the chapel seemed to make it holy/);
+  assert.match(html, /Alex did\./);
+  assert.match(html, /The clouds were gone\./);
+  assert.match(html, /id="main"/);
+  assert.doesNotMatch(html, /og\.png/);
 });
 
 test("keeps the finished site accessible and starter-free", async () => {

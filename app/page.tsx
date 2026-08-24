@@ -1,7 +1,10 @@
 import { photographs } from "./photo-data";
+import { posts } from "./post-data";
 
 const diaryEntries = [
+  ...posts,
   {
+    slug: undefined,
     date: "18 Aug 2026",
     title: "The hour before the city wakes",
     excerpt:
@@ -9,6 +12,7 @@ const diaryEntries = [
     tag: "morning walk",
   },
   {
+    slug: undefined,
     date: "03 Aug 2026",
     title: "Things I want to remember",
     excerpt:
@@ -16,6 +20,7 @@ const diaryEntries = [
     tag: "small things",
   },
   {
+    slug: undefined,
     date: "21 Jul 2026",
     title: "A weekend without a plan",
     excerpt:
@@ -234,16 +239,36 @@ export default function Home() {
           </div>
 
           <div className="diary-grid">
-            {diaryEntries.map((entry) => (
-              <article className="diary-card" key={entry.title}>
+            {diaryEntries.map((entry) => {
+              const card = (
+                <>
                 <div className="card-meta">
                   <time>{entry.date}</time>
                   <span>{entry.tag}</span>
                 </div>
                 <h3>{entry.title}</h3>
                 <p>{entry.excerpt}</p>
-              </article>
-            ))}
+                {entry.slug ? (
+                  <span className="card-read">read the dream →</span>
+                ) : null}
+                </>
+              );
+
+              return entry.slug ? (
+                <a
+                  className="diary-card"
+                  href={`./posts/${entry.slug}`}
+                  key={entry.title}
+                  aria-label={`Read ${entry.title}`}
+                >
+                  {card}
+                </a>
+              ) : (
+                <article className="diary-card" key={entry.title}>
+                  {card}
+                </article>
+              );
+            })}
           </div>
         </section>
 
