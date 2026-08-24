@@ -158,7 +158,8 @@ export default function Home() {
               <span className="pronouns">he/they</span>
             </div>
             <p className="pronunciation">
-              pronounced <strong>Chee Hao</strong> -- “Chee” as in cheese.
+              pronounced <strong>Chee Hao</strong> -- “Chee” as in cheese. 
+              i am also obsessed with zhuyin (ㄅㄆㄇㄈ), so i sometimes write my name as ㄑㄏ(zhuyin acronyms).
             </p>
             <figure className="about-portrait">
               <img
