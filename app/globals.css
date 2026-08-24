@@ -873,6 +873,11 @@ footer > a {
   grid-column: 1 / -1;
 }
 
+.post-image-gallery figure:first-child img {
+  height: min(105vw, 900px);
+  object-position: center 64%;
+}
+
 .post-image-gallery img {
   width: 100%;
   height: min(76vw, 760px);
@@ -1092,7 +1097,8 @@ footer > a {
 
   .post-image-gallery img,
   .post-image-gallery figure:nth-child(2) img,
-  .post-image-gallery figure:nth-child(3) img {
+  .post-image-gallery figure:nth-child(3) img,
+  .post-image-gallery figure:first-child img {
     height: min(142vw, 720px);
   }
 

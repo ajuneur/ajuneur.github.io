@@ -187,7 +187,7 @@ test("publishes the accidental ring as a photo post", async () => {
     html,
     /<title>The ring I bought for free delivery — Qihao<\/title>/i,
   );
-  assert.match(html, /24 Aug 2026/);
+  assert.match(html, /9 Aug 2026/);
   assert.match(html, /reach the minimum for free delivery/);
   assert.match(html, /This men’s item is also popular with women/);
   assert.match(html, /This women’s item is also popular with men/);

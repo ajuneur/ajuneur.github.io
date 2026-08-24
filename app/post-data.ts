@@ -17,7 +17,7 @@ export type Post = {
 export const posts: Post[] = [
   {
     slug: "the-ring-i-bought-for-free-delivery",
-    date: "24 Aug 2026",
+    date: "9 Aug 2026",
     title: "The ring I bought for free delivery",
     excerpt:
       "I only added it to reach the free-delivery minimum. Somehow, the cheapest thing in the order became my favourite.",
