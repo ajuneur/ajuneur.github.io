@@ -110,6 +110,7 @@ test("keeps the finished site accessible and starter-free", async () => {
   assert.match(page, /loading="lazy"/);
   assert.match(layout, /generateMetadata/);
   assert.match(layout, /summary_large_image/);
+  assert.match(css, /\.brand::after/);
   assert.match(css, /prefers-reduced-motion:\s*reduce/);
   assert.match(css, /@media \(max-width: 640px\)/);
   assert.match(packageJson, /"build:pages"/);

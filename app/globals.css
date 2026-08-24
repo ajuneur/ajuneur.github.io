@@ -75,10 +75,26 @@ img {
 }
 
 .brand {
+  position: relative;
+  isolation: isolate;
   width: fit-content;
-  font-size: 1.35rem;
-  font-weight: 750;
-  letter-spacing: -0.05em;
+  padding: 0.18rem 0.12rem;
+  font-size: clamp(1.65rem, 2.7vw, 1.95rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.065em;
+}
+
+.brand::after {
+  position: absolute;
+  z-index: -1;
+  right: -0.18rem;
+  bottom: 0.08rem;
+  left: -0.18rem;
+  height: 0.48rem;
+  border-radius: 2px;
+  background: var(--accent-soft);
+  content: "";
 }
 
 .brand span {
