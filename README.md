@@ -1,4 +1,4 @@
-# Field Notes
+# ajuneur
 
 A warm, editorial personal website for posts, life notes, and
 photographs. The sample version is written for Qi Hao Liang and is ready to

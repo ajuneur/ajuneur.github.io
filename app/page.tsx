@@ -430,7 +430,7 @@ export default function Home() {
       </main>
 
       <footer>
-        <p>made quietly in singapore · 2026</p>
+        <p>ajuneur · made quietly in singapore · 2026</p>
         <p className="footer-note">photos &amp; artwork by qihao</p>
         <a href="#top">back to top ↑</a>
       </footer>

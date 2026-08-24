@@ -31,7 +31,8 @@ test("server-renders Qi Hao's personal corner", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<title>Qi Hao — a little corner of the internet<\/title>/i);
+  assert.match(html, /<title>ajuneur — Qihao’s little corner<\/title>/i);
+  assert.match(html, /ajuneur · made quietly in singapore/);
   assert.match(html, /「/);
   assert.match(html, /」/);
   assert.match(html, /just keeping track of/);

@@ -120,8 +120,9 @@ server.stderr.on("data", (chunk) => {
 try {
   const rendered = await waitForPage();
   const staticDocument = makeStaticDocument(rendered, {
-    title: "Qi Hao — a little corner of the internet",
-    description: "Posts, photos, and little things from life lately.",
+    title: "ajuneur — Qihao’s little corner",
+    description:
+      "Posts, photographs, paintings, and little things from Qihao’s life lately.",
     socialImage: "og.png",
     canonicalPath: "",
     type: "website",
