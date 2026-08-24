@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { headers } from "next/headers";
 import "./globals.css";
 
-const title = "ajuneur — Qihao's little corner";
+const title = "qihao's little corner";
 const description =
   "Posts, photographs, paintings, and little things from Qihao's life lately.";
 
@@ -30,7 +30,7 @@ export async function generateMetadata(): Promise<Metadata> {
           url: socialImage,
           width: 1731,
           height: 909,
-          alt: "ajuneur — Qihao’s little corner for posts, photos, and life lately",
+          alt: "qihao's little corner for posts, photos, and life lately",
         },
       ],
     },
