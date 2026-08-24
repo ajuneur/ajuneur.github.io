@@ -65,7 +65,7 @@ const paintings = [
     alt: "A colourful painting of layered leaves and branching forms",
     title: "Seasons",
     story: "I collected leaves from four different seasons, painted their world onto the background, and then brought the real leaves back into the painting. Layered between the painted and the real, the piece becomes a 2.5-dimensional reflection on the passing of the seasons."
-    //story: "Leaves gathered across four seasons, preserved in a world of paint. I painted the background, then layered real leaves over it, allowing nature and its representation to overlap. Somewhere between two and three dimensions, the seasons seem to fold into one another—a small reflection on time, change, and what remains.",
+    //story: "Leaves gathered across four seasons, preserved in a world of paint. I painted the background, then layered real leaves over it, allowing nature and its representation to overlap. Somewhere between two and three dimensions, the seasons seem to fold into one another--a small reflection on time, change, and what remains.",
   },
   {
     src: "./paintings/painting-02.jpg",
@@ -152,11 +152,11 @@ export default function Home() {
           <div className="about-heading">
             <p className="section-label">00 / about</p>
             <div className="about-title-line">
-              <h2 id="about-title">hey! i am Qihao Liang.</h2>
+              <h2 id="about-title">hey! i am qihao liang.</h2>
               <span className="pronouns">he/they</span>
             </div>
             <p className="pronunciation">
-              pronounced <strong>Chee Hao</strong> — “Chee” as in cheese.
+              pronounced <strong>Chee Hao</strong> -- “Chee” as in cheese.
             </p>
             <figure className="about-portrait">
               <img
@@ -166,7 +166,7 @@ export default function Home() {
                 height="1200"
               />
               <figcaption>
-                perth, australia — the best sushi i’ve ever had; my friend
+                perth, australia -- the best sushi i’ve ever had; my friend
                 swears by the udon. genuinely not an ad, hahaha. {" "}
                 <a
                   href="https://maps.app.goo.gl/KoSfhf5JGTH3pRUA8?g_st=ic"
@@ -181,9 +181,9 @@ export default function Home() {
           </div>
           <div className="about-copy">
             <p>
-              i’m currently doing a PhD in computer science, but LITERALLY don’t
+              i’m currently doing a PhD in computer science, but i LITERALLY don’t
               want research to inundate every corner of my life. i made this
-              little webpage to give the rest of me some room again—to notice
+              little webpage to give the rest of me some room again--to notice
               things, make things, and keep life feeling alive.
             </p>
             <p>
@@ -241,7 +241,7 @@ export default function Home() {
           <div className="hero-copy">
             <p className="hello">hello, i’m qi hao <span aria-hidden="true">👋</span></p>
             <h1 id="hero-title">
-              just keeping track of <em>life as it happens.</em>
+              the mini archive of <em>me being MENTALLY alive</em>
             </h1>
             <p className="hero-intro">
               this is my little corner for posts, photos, and random
@@ -259,7 +259,7 @@ export default function Home() {
               <span className="status-dot" aria-hidden="true" />
               <p>
                 currently
-                <strong>reading Newcomer + Project Hail Mary</strong>
+                <strong>reading newcomer & project hail mary; keeping writing stuff</strong>
               </p>
             </div>
           </div>
@@ -298,7 +298,7 @@ export default function Home() {
               <p className="section-label">01 / posts</p>
               <h2 id="posts-title">recent posts</h2>
             </div>
-            <p>nothing too serious — just days i felt like keeping.</p>
+            <p>nothing too serious -- just days i felt like keeping.</p>
           </div>
 
           <div className="diary-grid">
