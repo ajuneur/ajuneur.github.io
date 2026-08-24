@@ -132,10 +132,12 @@ export default function Home() {
 
           <figure className="hero-photo">
             <img
-              src="./photos/desk.jpg"
-              alt="An open notebook, pen, glasses, and a coffee on a wooden table"
+              src="./qihao-portrait.jpg"
+              alt="Qihao smiling over a plate of sushi at a restaurant"
+              width="909"
+              height="1200"
             />
-            <figcaption>somewhere between coffee and a blank page</figcaption>
+            <figcaption>hi, this is me.</figcaption>
           </figure>
         </section>
 
@@ -265,15 +267,6 @@ export default function Home() {
             <p className="pronunciation">
               pronounced <strong>Chee Hao</strong> — “Chee” as in cheese.
             </p>
-            <figure className="about-portrait">
-              <img
-                src="./qihao-portrait.jpg"
-                alt="Qihao smiling over a plate of sushi at a restaurant"
-                width="909"
-                height="1200"
-                loading="lazy"
-              />
-            </figure>
           </div>
           <div className="about-copy">
             <p>

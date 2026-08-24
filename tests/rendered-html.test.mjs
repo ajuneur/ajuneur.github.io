@@ -34,6 +34,12 @@ test("server-renders Qi Hao's personal corner", async () => {
   assert.match(html, /<title>Qi Hao — a little corner of the internet<\/title>/i);
   assert.match(html, /just keeping track of/);
   assert.match(html, /life as it happens\./);
+  assert.match(
+    html,
+    /class="hero-photo"[\s\S]*?src="\.\/qihao-portrait\.jpg"/,
+  );
+  assert.match(html, /hi, this is me\./);
+  assert.doesNotMatch(html, /src="\.\/photos\/desk\.jpg"/);
   assert.match(html, /recent diary stuff/);
   assert.match(html, /some photos i like/);
   assert.match(html, /\.\/photos\/light-drawing-figure\.jpg/);
@@ -48,7 +54,6 @@ test("server-renders Qi Hao's personal corner", async () => {
   assert.match(html, /\.\/paintings\/painting-09\.jpg/);
   assert.match(html, /hey, i’m qihao\./);
   assert.match(html, /Chee Hao/);
-  assert.match(html, /\.\/qihao-portrait\.jpg/);
   assert.match(html, /books &amp; marginal notes/);
   assert.match(html, /making little bits of music/);
   assert.match(html, /https:\/\/www\.instagram\.com\/ajuneur\//);
