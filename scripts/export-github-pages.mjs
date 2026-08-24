@@ -67,8 +67,8 @@ function makeStaticDocument(document, page) {
   const cleanBody = visibleBody
     .replace(/<script[\s\S]*?<\/script>/g, "")
     .replace(/<!--[\s\S]*?-->/g, "")
-    .replaceAll('href="/_next/', `href="${page.assetPrefix}_next/`)
-    .replaceAll('src="/_next/', `src="${page.assetPrefix}_next/`);
+    .replaceAll('src="/', `src="${page.assetPrefix}`)
+    .replaceAll('href="/_next/', `href="${page.assetPrefix}_next/`);
 
   const siteUrl = publicSiteUrl();
   const socialImage = siteUrl
