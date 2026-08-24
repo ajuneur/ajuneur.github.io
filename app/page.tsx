@@ -113,10 +113,22 @@ export default function Home() {
             <figure className="about-portrait">
               <img
                 src="./qihao-portrait.jpg"
-                alt="Qihao smiling over a plate of sushi at a restaurant"
+                alt="Qihao smiling over a sushi platter at a restaurant in Perth, Australia"
                 width="909"
                 height="1200"
               />
+              <figcaption>
+                perth, australia — the best sushi i’ve ever had; my friend
+                swears by the udon. genuinely not an ad, hahaha. {" "}
+                <a
+                  href="https://maps.app.goo.gl/KoSfhf5JGTH3pRUA8?g_st=ic"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="View the restaurant on Google Maps (opens in a new tab)"
+                >
+                  the place ↗
+                </a>
+              </figcaption>
             </figure>
           </div>
           <div className="about-copy">

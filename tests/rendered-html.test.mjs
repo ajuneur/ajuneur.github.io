@@ -58,6 +58,10 @@ test("server-renders Qi Hao's personal corner", async () => {
   assert.match(html, /Chee Hao/);
   assert.match(html, /currently doing a PhD/);
   assert.match(html, /keep life feeling alive/);
+  assert.match(html, /the best sushi i’ve ever had/);
+  assert.match(html, /my friend[\s\S]*?the udon/);
+  assert.match(html, /https:\/\/maps\.app\.goo\.gl\/KoSfhf5JGTH3pRUA8\?g_st=ic/);
+  assert.match(html, /genuinely not an ad/);
   assert.match(html, /books &amp; marginal notes/);
   assert.match(html, /making little bits of music/);
   assert.match(html, /https:\/\/www\.instagram\.com\/ajuneur\//);
