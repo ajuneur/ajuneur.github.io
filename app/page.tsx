@@ -121,6 +121,12 @@ export default function Home() {
           </div>
           <div className="about-copy">
             <p>
+              i’m currently doing a PhD, but i don’t want studying to inundate
+              every corner of my life. i made this little webpage to give the
+              rest of me some room again—to notice things, make things, and
+              keep life feeling alive.
+            </p>
+            <p>
               i’m endlessly curious about the little things that make life feel
               bigger. you’ll usually find me halfway through a book, watching a
               movie i’ll think about for days, making little bits of music, or
