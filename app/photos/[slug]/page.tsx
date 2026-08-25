@@ -88,17 +88,29 @@ export default async function PhotoPage({ params }: PhotoPageProps) {
         <section className="behind-scene" aria-labelledby="story-title">
           <div>
             <p>behind the scene</p>
-            <h2 id="story-title">the story is coming</h2>
+            <h2 id="story-title">
+              {photograph.story.length > 0
+                ? "the story behind it"
+                : "the story is coming"}
+            </h2>
           </div>
           <div className="behind-scene-copy">
-            <p>
-              this space is ready for what was happening outside the frame: the
-              place, the people, the feeling, and why i decided to keep this
-              moment.
-            </p>
-            <p className="story-placeholder">
-              add the real story for this photograph here.
-            </p>
+            {photograph.story.length > 0 ? (
+              photograph.story.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))
+            ) : (
+              <>
+                <p>
+                  this space is ready for what was happening outside the frame:
+                  the place, the people, the feeling, and why i decided to keep
+                  this moment.
+                </p>
+                <p className="story-placeholder">
+                  add the real story in <code>app/photo-data.ts</code>.
+                </p>
+              </>
+            )}
           </div>
         </section>
 

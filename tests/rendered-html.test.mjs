@@ -31,7 +31,7 @@ test("server-renders Qi Hao's personal corner", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<title>qihao's little arXiv<\/title>/i);
+  assert.match(html, /<title>Qihao Liang's Little ArXiv<\/title>/i);
   assert.match(html, /cheehao · made quietly in singapore · 2026/);
   assert.match(html, /「/);
   assert.match(html, /」/);
@@ -148,7 +148,8 @@ test("gives each photograph its own shareable story page", async () => {
     assert.match(html, /behind the scene/);
     assert.match(html, /「/);
     assert.match(html, /」/);
-    assert.match(html, /the story is coming/);
+  assert.match(html, /the story is coming/);
+  assert.match(html, /app\/photo-data\.ts/);
     assert.match(html, /class="next-photo" href="\.\//);
     assert.doesNotMatch(html, /og\.png/);
   }
