@@ -571,6 +571,37 @@ footer a:hover {
   font-style: italic;
 }
 
+.parody-next {
+  margin-top: 18px;
+  padding: clamp(24px, 4vw, 38px);
+  border: 1px dashed rgba(110, 129, 106, 0.45);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.parody-next p {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-size: 0.7rem;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.parody-next h3 {
+  margin: 0;
+  font-size: clamp(1.25rem, 2.5vw, 1.8rem);
+  font-weight: 580;
+  letter-spacing: -0.025em;
+}
+
+.parody-next span {
+  display: block;
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
 .now-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

@@ -459,6 +459,15 @@ export default function Home() {
               </article>
             ))}
           </div>
+
+          <aside className="parody-next" aria-label="Next parody project">
+            <p>next project</p>
+            <h3>a <em>Hamilton</em> musical parody of my life hahaha...</h3>
+            <span>
+              there are already quite a few unfinished drafts, but those are
+              staying private for now.
+            </span>
+          </aside>
         </section>
 
         <section className="section" id="now" aria-labelledby="now-title">

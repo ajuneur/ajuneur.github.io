@@ -94,6 +94,8 @@ test("server-renders Qi Hao's personal corner", async () => {
   assert.match(html, /Can You Please Gimme an Update\?/);
   assert.match(html, /What do you think of my presentation today/);
   assert.match(html, /It'll be important to your final course grade/);
+  assert.match(html, /a <em>Hamilton<\/em> musical parody of my life/);
+  assert.match(html, /unfinished drafts, but those are staying private/);
   assert.match(html, /hey! i am qihao liang\./);
   assert.match(html, /he\/they/);
   assert.match(html, /chee hao/);
