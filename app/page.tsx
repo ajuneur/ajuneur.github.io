@@ -109,7 +109,7 @@ const paintings = [
     src: "./paintings/painting-08.jpg",
     alt: "A black-and-white circular cityscape filled with waves, roads, gears, and geometric structures",
     title: "The City of Paradox",
-    story: "My imagination of what it would be like if time were rewound and everything became trapped in a paradox. The circular cityscape represents the cyclical nature of time, while the waves, roads, and gears symbolise the interconnectedness of our experiences. The geometric structures suggest the complexity and breakdown of logic. It’s a warning not to try to undo the past.",
+    story: "My imagination of what it would be like if time were rewound and everything became trapped in a paradox. The circular cityscape represents the cyclical nature of time, while the waves, roads, and gears symbolise the interconnectedness of our experiences. The geometric structures suggest the complexity and breakdown of logic. It's a warning not to try to undo the past.",
     // story: "My imagination of what it would be like if time were rewound and everything were trapped in a paradox. The circular cityscape represents the cyclical nature of time, while the waves, roads, and gears symbolise the interconnectedness of our experiences. The geometric structures suggest the complexity and breakage of logic. It's a warning not to try to undo the past.",
   },
   {
@@ -140,7 +140,7 @@ const parodySongs = [
       "A miracle at nine",
       "The slides have all been proofread",
       "The feedback came on time",
-      "Nobody says ‘quick question’",
+      "Nobody says 'quick question'",
       "Then books an hour-long call",
       "My thesis writes its own conclusion",
       "And I do nothing at all",
@@ -490,7 +490,7 @@ export default function Home() {
               >
                 <em>Take a Break</em> ↗
               </a>
-              , so that’s where i’ll start.
+              , so that's where i'll start.
             </span>
           </aside>
         </section>
