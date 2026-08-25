@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { headers } from "next/headers";
 import "./globals.css";
 
-const title = "qihao's little arXiv";
+const title = "Qihao Liang's Little ArXiv";
 const description =
   "Posts, photographs, paintings, and little things from Qihao's life lately.";
 

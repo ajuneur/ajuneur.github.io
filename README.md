@@ -51,3 +51,12 @@ See GitHub's
 [custom Pages workflow guide](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)
 for repository permissions, private-repository availability, and advanced
 publishing options.
+
+## update post changes
+
+```bash
+npm test
+git add .
+git commit -m "Update website title"
+git push github main
+```
