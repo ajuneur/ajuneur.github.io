@@ -113,12 +113,12 @@ test("server-renders Qi Hao's personal corner", async () => {
   assert.match(html, /https:\/\/maps\.app\.goo\.gl\/KoSfhf5JGTH3pRUA8\?g_st=ic/);
   assert.match(html, /genuinely not an ad/);
   assert.match(html, /books &amp; marginal notes/);
-  assert.match(html, /making little bits of music/);
+  assert.match(html, /making random bits\/parodies of music/);
   assert.match(html, /https:\/\/www\.instagram\.com\/ajuneur\//);
   assert.match(html, /https:\/\/sg\.linkedin\.com\/in\/qihao-liang-3a17ba249/);
   assert.match(html, /mailto:cheehaoliang@gmail\.com/);
   assert.match(html, /<span>get in touch<\/span>/);
-  assert.match(html, /“The Fight” by Silly Boy Blue/);
+  assert.match(html, /&quot;The Fight&quot; by Silly Boy Blue/);
   assert.match(html, /\.\/now\/the-fight\.jpg/);
   assert.match(html, /Newcomer \+ Project Hail Mary/);
   assert.match(html, /\.\/now\/newcomer\.jpg/);
@@ -148,8 +148,7 @@ test("gives each photograph its own shareable story page", async () => {
     assert.match(html, /behind the scene/);
     assert.match(html, /「/);
     assert.match(html, /」/);
-  assert.match(html, /the story is coming/);
-  assert.match(html, /app\/photo-data\.ts/);
+    assert.match(html, /the story behind it/);
     assert.match(html, /class="next-photo" href="\.\//);
     assert.doesNotMatch(html, /og\.png/);
   }
@@ -159,12 +158,13 @@ test("gives each photograph its own shareable story page", async () => {
   ).text();
   assert.match(
     figuresHtml,
-    /<title>three figures on a wooden wall — Qihao<\/title>/i,
+    /<title>Man, Woman, and Non-Binary — Qihao<\/title>/i,
   );
   assert.match(
     figuresHtml,
     /A trio of simple white figures on wood—ordinary signage made unexpectedly graphic\./,
   );
+  assert.match(figuresHtml, /Montreal art museum, 2025/);
   assert.match(
     figuresHtml,
     /https:\/\/field-notes\.example\/photos\/three-figures\.jpg/,
@@ -174,6 +174,7 @@ test("gives each photograph its own shareable story page", async () => {
     await render("/photos/leaves-in-a-pocket-of-light")
   ).text();
   assert.match(leavesHtml, /<title>leaves in a pocket of light — Qihao<\/title>/i);
+  assert.match(leavesHtml, /Zhjiang Campus, Zhejiang University, 2020/);
   assert.match(
     leavesHtml,
     /https:\/\/field-notes\.example\/photos\/leaves-in-the-night\.jpg/,
