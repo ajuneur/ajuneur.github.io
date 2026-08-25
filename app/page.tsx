@@ -252,7 +252,7 @@ export default function Home() {
           <div className="hero-copy">
             <p className="hello">hello, i'm qi hao <span aria-hidden="true">👋</span></p>
             <h1 id="hero-title">
-              the mini archive of <em>me being MENTALLY alive</em>
+              the mini arXiv of <em>me being MENTALLY alive</em>
             </h1>
             <p className="hero-intro">
               this is my little corner for posts, photos, and random
