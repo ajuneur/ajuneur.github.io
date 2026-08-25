@@ -40,7 +40,7 @@ const now = [
     label: "learning",
     copy: "simple makeup, very slowly",
     detail:
-      "eyebrow powder, foundation, primer, a brush, and concealer from shu uemura; contour from Fenty Beauty. impressive kit, questionable motivation lol.",
+      "eyebrow powder, foundation, primer, a brush, and concealer from shu uemura; contour (amber shade) from fenty beauty. impressive kit, but i still haven't cured my laziness lol.",
     href: undefined,
     linkLabel: undefined,
   },
@@ -185,9 +185,11 @@ export default function Home() {
           <div className="about-copy">
             <p>
               i'm currently doing a phd in computer science, but i LITERALLY don't 
-              want research to inundate every corner of my life. i made this little 
-              webpage to give the rest of me some room again -- to notice things, make 
-              things, wander around, and just keep life feeling alive.
+              want research to inundate every corner of my life, nor do i want "phd 
+              student" to be my only label -- though i guess we shouldn't be labeling 
+              anyone LOL; i made this little webpage to give the rest of me some room 
+              again -- to stay MENTALLY alive, to notice things, make things, wander 
+              around, ETCCCCC...
             </p>
             <p>
               i'm curious about pretty much everything, especially the little things that 
@@ -203,7 +205,7 @@ export default function Home() {
             </p>
             <p>
               this little corner of the internet is basically where i keep things i don't want to forget
-               -- photos, ordinary days, neighbourhood walks, good light, places i've been, things i've 
+               -- photos, ordinary days, some secret routes that lead me somewhere unexpected, places i've been, stuffs i've 
                made, and whatever i happen to be learning or thinking about lately.
             </p>
 
