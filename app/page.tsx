@@ -225,7 +225,7 @@ export default function Home() {
             <p>
               i'm curious about pretty much everything, especially the little things that 
               somehow make life feel bigger. you'll usually find me halfway through a book, 
-              watching a movie i'll keep thinking about for days, making random bits of music, 
+              watching a movie i'll keep thinking about for days, making random bits/parodies of music, 
               learning a new language, or just walking around somewhere with my camera.
             </p>
             <p>
