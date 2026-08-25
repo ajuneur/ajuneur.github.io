@@ -31,11 +31,11 @@ test("server-renders Qi Hao's personal corner", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<title>ajuneur — Qihao’s little corner<\/title>/i);
-  assert.match(html, /ajuneur · made quietly in singapore/);
+  assert.match(html, /<title>qihao's little arXiv<\/title>/i);
+  assert.match(html, /cheehao · made quietly in singapore · 2026/);
   assert.match(html, /「/);
   assert.match(html, /」/);
-  assert.match(html, /the mini archive of/);
+  assert.match(html, /the mini arXiv of/);
   assert.match(html, /me being MENTALLY alive/);
   assert.match(html, /Qihao on Instagram/);
   assert.match(html, /Qihao on LinkedIn/);
@@ -51,7 +51,7 @@ test("server-renders Qi Hao's personal corner", async () => {
   assert.match(html, /href="#posts">posts<\/a>/);
   assert.match(html, /recent posts/);
   assert.match(html, /href="\.\/posts\/the-chapel-and-the-cliff"/);
-  assert.match(html, /The chapel and the cliff/);
+  assert.match(html, /Craquelure/);
   assert.match(html, /read the dream →/);
   assert.match(html, /href="\.\/posts\/a-weekend-without-a-plan"/);
   assert.match(html, /A weekend without a plan/);
@@ -71,7 +71,7 @@ test("server-renders Qi Hao's personal corner", async () => {
   assert.doesNotMatch(html, /The hour before the city wakes/);
   assert.doesNotMatch(html, /Things I want to remember/);
   assert.doesNotMatch(html, /href="#diary">diary<\/a>/);
-  assert.match(html, /photos i’ve taken/);
+  assert.match(html, /photos i(?:’|&#x27;)ve taken/);
   assert.match(html, /small scenes i noticed and wanted to keep/);
   assert.match(html, /\.\/photos\/light-drawing-figure\.jpg/);
   assert.match(html, /\.\/photos\/light-drawing-face\.jpg/);
@@ -81,7 +81,7 @@ test("server-renders Qi Hao's personal corner", async () => {
   assert.match(html, /\.\/photos\/three-figures-on-a-wooden-wall/);
   assert.doesNotMatch(html, /\.\/photos\/(?:garden|flowers)\.jpg/);
   assert.match(html, /\.\/photos\/drawing-with-light-after-dark/);
-  assert.match(html, /things i’ve painted/);
+  assert.match(html, /things i(?:’|&#x27;)ve painted/);
   assert.match(html, /painting\s*(?:<!-- -->)?09/);
   assert.match(html, /<h3>Seasons<\/h3>/);
   assert.match(html, /four different seasons/);
@@ -89,14 +89,19 @@ test("server-renders Qi Hao's personal corner", async () => {
   assert.match(html, /<h3>Whirlpool of Melody<\/h3>/);
   assert.doesNotMatch(html, /title coming soon/);
   assert.match(html, /\.\/paintings\/painting-09\.jpg/);
+  assert.match(html, /id="parodies"/);
+  assert.match(html, /parody songs i've written/);
+  assert.match(html, /Can You Please Gimme an Update\?/);
+  assert.match(html, /What do you think of my presentation today/);
+  assert.match(html, /It'll be important to your final course grade/);
   assert.match(html, /hey! i am qihao liang\./);
   assert.match(html, /he\/they/);
-  assert.match(html, /Chee Hao/);
-  assert.match(html, /currently doing a PhD in computer science/);
-  assert.match(html, /LITERALLY don’t want research/);
-  assert.match(html, /keep life feeling alive/);
-  assert.match(html, /learning and thinking about lately/);
-  assert.match(html, /the best sushi i’ve ever had/);
+  assert.match(html, /chee hao/);
+  assert.match(html, /currently doing a phd in computer science/);
+  assert.match(html, /LITERALLY don(?:’|&#x27;)t want research/);
+  assert.match(html, /to stay MENTALLY alive/);
+  assert.match(html, /learning or thinking about lately/);
+  assert.match(html, /the best sushi i(?:’|&#x27;)ve ever had/);
   assert.match(html, /my friend[\s\S]*?the udon/);
   assert.match(html, /https:\/\/maps\.app\.goo\.gl\/KoSfhf5JGTH3pRUA8\?g_st=ic/);
   assert.match(html, /genuinely not an ad/);
@@ -113,7 +118,7 @@ test("server-renders Qi Hao's personal corner", async () => {
   assert.match(html, /\.\/now\/project-hail-mary\.jpg/);
   assert.match(html, /simple makeup, very slowly/);
   assert.match(html, /shu uemura/);
-  assert.match(html, /Fenty Beauty/);
+  assert.match(html, /fenty beauty/);
   assert.match(html, /through SKAM France/);
   assert.match(html, /\.\/now\/skam-france-season-10\.jpg/);
   assert.match(html, /2 \(Manon\), 7 \(Tiffany\), and 10 \(Anaïs\)/);
@@ -172,7 +177,7 @@ test("publishes the Barcelona dream as its own post", async () => {
   assert.equal(response.status, 200);
 
   const html = await response.text();
-  assert.match(html, /<title>The chapel and the cliff — Qihao<\/title>/i);
+  assert.match(html, /<title>Craquelure — Qihao<\/title>/i);
   assert.match(html, /18 Apr 2026/);
   assert.match(html, /where tenderness is transformed by shame into something fatal/);
   assert.match(html, /one interesting dream/);

@@ -512,6 +512,65 @@ footer a:hover {
   font-size: 0.86rem;
 }
 
+.parody-list {
+  display: grid;
+  gap: 18px;
+}
+
+.parody-card {
+  padding: clamp(28px, 5vw, 52px);
+  display: grid;
+  grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
+  gap: clamp(36px, 8vw, 96px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--warm);
+}
+
+.parody-heading > p {
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.7rem;
+  font-weight: 650;
+}
+
+.parody-heading h3 {
+  margin: 14px 0 0;
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  font-weight: 620;
+  line-height: 1.02;
+  letter-spacing: -0.055em;
+}
+
+.parody-heading > span {
+  display: block;
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.parody-lyrics {
+  margin: 0;
+  padding: 4px 0 4px clamp(22px, 4vw, 42px);
+  border-left: 2px solid rgba(110, 129, 106, 0.35);
+}
+
+.parody-lyrics span {
+  display: block;
+  margin-bottom: 12px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  line-height: 1.45;
+}
+
+.parody-lyrics small {
+  display: block;
+  margin-top: 24px;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
 .now-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1167,6 +1226,11 @@ footer > a {
 
   .story-space {
     min-height: 115px;
+  }
+
+  .parody-card {
+    grid-template-columns: 1fr;
+    gap: 32px;
   }
 
   .about-card {

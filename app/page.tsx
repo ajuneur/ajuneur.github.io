@@ -119,6 +119,20 @@ const paintings = [
   },
 ];
 
+const parodySongs = [
+  {
+    title: "Can You Please Gimme an Update?",
+    note: "an unfinished little academic-administration parody",
+    lyrics: [
+      "Can you please gimme an update",
+      "What do you think of my presentation today",
+      "Can you finish the initial survey",
+      "It'll be important to your final course grade",
+    ],
+    tail: "you do understand ...",
+  },
+];
+
 const interests = [
   ["📚", "books & marginal notes"],
   ["🎬", "films that linger"],
@@ -142,6 +156,7 @@ export default function Home() {
           <a href="#posts">posts</a>
           <a href="#photos">photos</a>
           <a href="#paintings">paintings</a>
+          <a href="#parodies">parodies</a>
           <a href="#now">right now</a>
         </nav>
         <a className="say-hi" href="#about">
@@ -414,10 +429,42 @@ export default function Home() {
           </div>
         </section>
 
+        <section
+          className="section parody-section"
+          id="parodies"
+          aria-labelledby="parodies-title"
+        >
+          <div className="section-heading">
+            <div>
+              <p className="section-label">04 / parody songs</p>
+              <h2 id="parodies-title">parody songs i've written</h2>
+            </div>
+            <p>lyrics i rewrote for fun and then took far too seriously.</p>
+          </div>
+
+          <div className="parody-list">
+            {parodySongs.map((song, index) => (
+              <article className="parody-card" key={song.title}>
+                <div className="parody-heading">
+                  <p>parody {String(index + 1).padStart(2, "0")}</p>
+                  <h3>{song.title}</h3>
+                  <span>{song.note}</span>
+                </div>
+                <blockquote className="parody-lyrics">
+                  {song.lyrics.map((line) => (
+                    <span key={line}>{line}</span>
+                  ))}
+                  <small>{song.tail}</small>
+                </blockquote>
+              </article>
+            ))}
+          </div>
+        </section>
+
         <section className="section" id="now" aria-labelledby="now-title">
           <div className="section-heading">
             <div>
-              <p className="section-label">04 / lately</p>
+              <p className="section-label">05 / lately</p>
               <h2 id="now-title">right now</h2>
             </div>
             <p>the very small life update.</p>
