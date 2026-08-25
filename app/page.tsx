@@ -131,6 +131,21 @@ const parodySongs = [
     ],
     tail: "you do understand ...",
   },
+  {
+    title: "A World Without Follow-ups",
+    note: "an Imagine parody for academically impossible optimism",
+    lyrics: [
+      "Picture my inbox silent",
+      "A miracle at nine",
+      "The slides have all been proofread",
+      "The feedback came on time",
+      "Nobody says ‘quick question’",
+      "Then books an hour-long call",
+      "My thesis writes its own conclusion",
+      "And I do nothing at all",
+    ],
+    tail: "pure academic fantasy.",
+  },
 ];
 
 const interests = [
@@ -464,8 +479,17 @@ export default function Home() {
             <p>next project</p>
             <h3>a <em>Hamilton</em> musical parody of my life hahaha...</h3>
             <span>
-              there are already quite a few unfinished drafts, but those are
-              staying private for now.
+              i've got quite a few unfinished drafts that are too{" "}
+              <em>unpresentable</em> to share yet. my favourite song from{" "}
+              <em>Hamilton</em> is{" "}
+              <a
+                href="https://www.youtube.com/watch?v=2G8q2To4IGU"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <em>Take a Break</em> ↗
+              </a>
+              , so that’s where i’ll start.
             </span>
           </aside>
         </section>
