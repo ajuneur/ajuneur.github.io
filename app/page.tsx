@@ -108,8 +108,9 @@ const paintings = [
   {
     src: "./paintings/painting-08.jpg",
     alt: "A black-and-white circular cityscape filled with waves, roads, gears, and geometric structures",
-    title: "Paradox City",
-    story: "My imagination of what it would be like if time were rewound and everything were trapped in a paradox. The circular cityscape represents the cyclical nature of time, while the waves, roads, and gears symbolise the interconnectedness of our experiences. The geometric structures suggest the complexity and breakage of logic. It's a warning not to try to undo the past.",
+    title: "The City of Paradox",
+    story: "My imagination of what it would be like if time were rewound and everything became trapped in a paradox. The circular cityscape represents the cyclical nature of time, while the waves, roads, and gears symbolise the interconnectedness of our experiences. The geometric structures suggest the complexity and breakdown of logic. It’s a warning not to try to undo the past.",
+    // story: "My imagination of what it would be like if time were rewound and everything were trapped in a paradox. The circular cityscape represents the cyclical nature of time, while the waves, roads, and gears symbolise the interconnectedness of our experiences. The geometric structures suggest the complexity and breakage of logic. It's a warning not to try to undo the past.",
   },
   {
     src: "./paintings/painting-09.jpg",
