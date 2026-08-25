@@ -218,7 +218,7 @@ export default function Home() {
               i'm currently doing a phd in computer science, but i LITERALLY don't 
               want research to inundate every corner of my life, nor do i want "phd 
               student" to be my only label -- though i guess we shouldn't be labeling 
-              anyone LOL; i made this little webpage to give the rest of me some room 
+              anyone LOL; i made this little webpage to give the rest of myself some room 
               again -- to stay MENTALLY alive, to notice things, make things, wander 
               around, ETCCCCC...
             </p>
