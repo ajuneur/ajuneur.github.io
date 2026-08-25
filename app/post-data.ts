@@ -63,9 +63,9 @@ export const posts: Post[] = [
   {
     slug: "the-chapel-and-the-cliff",
     date: "18 Apr 2026",
-    title: "The chapel and the cliff",
+    title: "Craquelure",
     excerpt:
-      "Two boys walk toward a chapel in the mild Barcelona spring. By noon, love has curdled into fear.",
+      "An interesting dream; I title it craquelure--a word I picked up while learning French--to describe how tenderness transformed into something fatal.",
     description:
       "Two boys walk toward a chapel in a spring-lit city, where tenderness is transformed by shame into something fatal.",
     tag: "dream",
