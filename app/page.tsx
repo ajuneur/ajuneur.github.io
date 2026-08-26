@@ -215,7 +215,7 @@ export default function Home() {
           </div>
           <div className="about-copy">
             <p>
-              i'm currently doing a phd in computer science, but i LITERALLY don't 
+              i'm currently doing a phd in computer science at nus singapore, but i LITERALLY don't 
               want research to inundate every corner of my life, nor do i want "phd 
               student" to be my only label -- though i guess we shouldn't be labelling 
               anyone LOL; i made this little webpage to give the rest of myself some room 
