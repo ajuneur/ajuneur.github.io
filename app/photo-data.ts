@@ -16,7 +16,10 @@ export const photographs: Photograph[] = [
     description:
       "A figure drawn into the night with one moving light and a long exposure.",
     // Add each paragraph of the story as a separate quoted line below.
-    story: ["This pic was taken at the Zijingang Campus, Zhejiang University when I was an undergrad in 2020. That winter was probably the best time I had at ZJU -- I looked forward to that digital photography course almost every week. That took us quite a while to get right. We had to find a dark enough place, and then we had to figure out how to draw the figure in a way that would be recognisable. It was a lot of trial and error, but we finally got it!"],
+    story: [
+      "This picture was taken in the winter of 2019 at Zhejiang University’s Zijingang Campus, when I was an undergraduate. That winter was probably the best time I had at ZJU--I looked forward to our digital photography class almost every week. We visited public parks, nearby hills, and even other campuses to take pictures. I still relish those moments: they allowed me to experience the city and absorb its atmosphere without having to worry too much about coursework.",
+      "This particular picture took us quite a while to get right. We had to find somewhere dark enough, then work out how to draw the figure so that it would still be recognisable. It took a lot of trial and error, but eventually, we got it!",
+    ],
   },
   {
     slug: "a-face-made-in-one-line",
