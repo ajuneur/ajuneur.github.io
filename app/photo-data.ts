@@ -5,6 +5,8 @@ export type Photograph = {
   title: string;
   description: string;
   story: string[];
+  storyImages?: { image: string; alt: string }[];
+  storyCaption?: string;
 };
 
 export const photographs: Photograph[] = [
@@ -18,8 +20,20 @@ export const photographs: Photograph[] = [
     // Add each paragraph of the story as a separate quoted line below.
     story: [
       "This picture was taken in the winter of 2019 at Zhejiang University’s Zijingang Campus, when I was an undergraduate. That winter was probably the best time I had at ZJU--I looked forward to our digital photography class almost every week. We visited public parks, nearby hills, and even other campuses to take pictures. I still relish those moments: they allowed me to experience the city and absorb its atmosphere without having to worry too much about coursework.",
-      "This particular picture took us quite a while to get right. We had to find somewhere dark enough, then work out how to draw the figure so that it would still be recognisable. It took a lot of trial and error, but eventually, we got it!",
+      "This particular picture took us quite a while to get right. We had to find somewhere dark enough, then work out how to draw the figure so that it would still be recognisable. It took a lot of trial and error, but eventually, we got it!"
     ],
+    storyImages: [
+      {
+        image: "light-drawing-process-01.jpg",
+        alt: "Students crouching and moving phone flashlights across a dark lawn while making a light drawing",
+      },
+      {
+        image: "light-drawing-process-02.jpg",
+        alt: "Students pointing bright phone flashlights towards the camera during the light-drawing experiment",
+      },
+    ],
+    storyCaption:
+      "To make this single picture, we had to ‘dance’ like devils HAHAHAH—switching on our phone flashlights and moving through the dark to draw the figure one glowing line at a time.",
   },
   {
     slug: "a-face-made-in-one-line",

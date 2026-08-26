@@ -179,6 +179,13 @@ test("gives each photograph its own shareable story page", async () => {
     leavesHtml,
     /https:\/\/field-notes\.example\/photos\/leaves-in-the-night\.jpg/,
   );
+
+  const lightHtml = await (
+    await render("/photos/drawing-with-light-after-dark")
+  ).text();
+  assert.match(lightHtml, /light-drawing-process-01\.jpg/);
+  assert.match(lightHtml, /light-drawing-process-02\.jpg/);
+  assert.match(lightHtml, /dance[^<]*like devils HAHAHAH/);
 });
 
 test("publishes the Barcelona dream as its own post", async () => {

@@ -96,9 +96,28 @@ export default async function PhotoPage({ params }: PhotoPageProps) {
           </div>
           <div className="behind-scene-copy">
             {photograph.story.length > 0 ? (
-              photograph.story.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))
+              <>
+                {photograph.story.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+                {photograph.storyImages && (
+                  <figure className="story-process">
+                    <div className="story-process-grid">
+                      {photograph.storyImages.map((image) => (
+                        <img
+                          src={`../../photos/${image.image}`}
+                          alt={image.alt}
+                          loading="lazy"
+                          key={image.image}
+                        />
+                      ))}
+                    </div>
+                    {photograph.storyCaption && (
+                      <figcaption>{photograph.storyCaption}</figcaption>
+                    )}
+                  </figure>
+                )}
+              </>
             ) : (
               <>
                 <p>
