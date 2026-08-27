@@ -3,6 +3,7 @@ import { headers } from "next/headers";
 import "./globals.css";
 
 const title = "Qihao Liang's Little ArXiv";
+const siteName = "Qihao Liang";
 const description =
   "Posts, photographs, paintings, and little things from Qihao's life lately.";
 
@@ -20,9 +21,13 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     metadataBase,
     title,
+    applicationName: siteName,
     description,
+    authors: [{ name: siteName }],
+    creator: siteName,
     openGraph: {
       type: "website",
+      siteName,
       title,
       description,
       images: [
@@ -43,14 +48,36 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const requestHeaders = await headers();
+  const host = requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host");
+  const protocol =
+    requestHeaders.get("x-forwarded-proto") ??
+    (host?.startsWith("localhost") ? "http" : "https");
+  const siteUrl = host ? `${protocol}://${host}/` : "https://ajuneur.github.io/";
+  const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: siteName,
+    alternateName: title,
+    url: siteUrl,
+  };
+
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteJsonLd).replace(/</g, "\\u003c"),
+          }}
+        />
+        {children}
+      </body>
     </html>
   );
 }

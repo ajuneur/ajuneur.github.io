@@ -132,6 +132,9 @@ test("server-renders Qi Hao's personal corner", async () => {
   assert.match(html, /music\.youtube\.com\/search\?q=silly\+boy\+blue\+the\+fight/);
   assert.match(html, /https:\/\/www\.france\.tv\/slash\/skam-france\//);
   assert.match(html, /https:\/\/field-notes\.example\/og\.png/);
+  assert.match(html, /name="application-name" content="Qihao Liang"/);
+  assert.match(html, /property="og:site_name" content="Qihao Liang"/);
+  assert.match(html, /"@type":"WebSite","name":"Qihao Liang"/);
   assert.doesNotMatch(html, /codex-preview|SkeletonPreview|react-loading-skeleton/);
 });
 
