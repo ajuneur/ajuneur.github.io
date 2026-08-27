@@ -80,11 +80,25 @@ function makeStaticDocument(document, page) {
     : "";
   const title = escapeAttribute(page.title);
   const description = escapeAttribute(page.description);
+  const siteName = "Qihao Liang";
+  const siteNameMetadata = page.type === "website"
+    ? `
+    <meta name="application-name" content="${siteName}">
+    <meta property="og:site_name" content="${siteName}">
+    <script type="application/ld+json">${JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: siteName,
+      alternateName: [page.title, "ajuneur.github.io"],
+      url: canonicalUrl ?? "https://ajuneur.github.io/",
+    }).replaceAll("<", "\\u003c")}</script>`
+    : "";
 
   const metadata = `
     <title>${title}</title>
     <meta name="description" content="${description}">
     ${canonical}
+    ${siteNameMetadata}
     <meta property="og:type" content="${page.type}">
     <meta property="og:title" content="${title}">
     <meta property="og:description" content="${description}">
