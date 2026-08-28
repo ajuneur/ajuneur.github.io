@@ -89,7 +89,7 @@ function makeStaticDocument(document, page) {
       "@context": "https://schema.org",
       "@type": "WebSite",
       name: siteName,
-      alternateName: [page.title, "ajuneur.github.io"],
+      alternateName: page.title,
       url: canonicalUrl ?? "https://ajuneur.github.io/",
     }).replaceAll("<", "\\u003c")}</script>`
     : "";
