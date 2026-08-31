@@ -19,7 +19,7 @@ const now = [
     label: "favourite song",
     copy: '"The Fight" by Silly Boy Blue',
     detail: "the song currently following me everywhere.",
-    href: "https://music.youtube.com/watch?v=qn_shRQpytM&si=CrALD9DfwGuZn3M4",
+    href: "https://www.youtube.com/watch?v=Hj3SOCc2KzI",
     linkLabel: "listen on YouTube Music ↗",
   },
   {
