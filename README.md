@@ -57,6 +57,6 @@ publishing options.
 ```bash
 npm test
 git add .
-git commit -m "Update website title"
+git commit -m "Update song link"
 git push github main
 ```
