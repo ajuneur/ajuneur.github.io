@@ -271,7 +271,7 @@ test("publishes the Shopee internship farewell", async () => {
   assert.match(html, /29 Sep 2026/);
   assert.match(html, /very first internship/i);
   assert.match(html, /friends from Ego/i);
-  assert.match(html, /shopee-office\.jpg/);
+  assert.match(html, /shopee-office-landscape\.jpg/);
   assert.match(html, /shopee-polaroid\.jpg/);
   assert.match(html, /holding-the-polaroid\.jpg/);
 });

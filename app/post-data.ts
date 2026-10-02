@@ -32,7 +32,7 @@ export const posts: Post[] = [
     ],
     images: [
       {
-        src: "/posts/my-first-internship/shopee-office.jpg",
+        src: "/posts/my-first-internship/shopee-office-landscape.jpg",
         alt: "Qihao making a peace sign behind the red Shopee office lettering",
         caption: "one last peace sign at the Shopee office!",
       },
