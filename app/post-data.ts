@@ -16,6 +16,39 @@ export type Post = {
 
 export const posts: Post[] = [
   {
+    slug: "my-first-internship",
+    date: "29 Sep 2026",
+    title: "my first internship, wrapped!",
+    excerpt:
+      "I wrapped up my internship at Shopee Singapore on 29 September! My first internship—and such a fruitful journey.",
+    description:
+      "A short goodbye to my first internship at Shopee Singapore, and a thank-you to the people who made it so memorable.",
+    tag: "personal update",
+    note: "a little goodbye to my first internship.",
+    body: [
+      "I wrapped up my internship at Shopee Singapore on 29 September! It was my very first internship, and such a fruitful journey.",
+      "I’m really grateful to my mentor and colleagues for all their patience, kindness, and support. I’ll never forget my friends from Ego, or the friend who stayed with me when I had a panic attack at work. I felt so loved by everyone around me.",
+      "It was really great meeting and getting to know so many new friendss!!! Thank you for making my first internship so memorable 🧡",
+    ],
+    images: [
+      {
+        src: "/posts/my-first-internship/shopee-office.jpg",
+        alt: "Qihao making a peace sign behind the red Shopee office lettering",
+        caption: "one last peace sign at the Shopee office!",
+      },
+      {
+        src: "/posts/my-first-internship/shopee-polaroid.jpg",
+        alt: "A Polaroid of Qihao standing in front of a large Shopee bag icon",
+        caption: "a little Polaroid from my last day.",
+      },
+      {
+        src: "/posts/my-first-internship/holding-the-polaroid.jpg",
+        alt: "Qihao holding the Shopee Polaroid beside his face",
+        caption: "taking a small piece of the day home with me hahaha.",
+      },
+    ],
+  },
+  {
     slug: "the-ring-i-bought-for-free-delivery",
     date: "9 Aug 2026",
     title: "This women's item is also popular with men",

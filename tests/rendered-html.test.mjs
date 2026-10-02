@@ -44,7 +44,7 @@ test("server-renders Qi Hao's personal corner", async () => {
   assert.ok(html.indexOf('id="about"') < html.indexOf('class="hero"'));
   assert.match(html, /id="about"[\s\S]*?src="\.\/qihao-portrait\.jpg"/);
   assert.match(html, /class="hero-scrapbook"/);
-  assert.match(html, /\.\/posts\/new-ring\/ring-close-up-fixed\.jpg/);
+  assert.match(html, /\.\/posts\/my-first-internship\/shopee-polaroid\.jpg/);
   assert.match(html, /\.\/photos\/leaves-in-the-night\.jpg/);
   assert.match(html, /\.\/paintings\/painting-09\.jpg/);
   assert.doesNotMatch(html, /src="\.\/photos\/desk\.jpg"/);
@@ -59,6 +59,10 @@ test("server-renders Qi Hao's personal corner", async () => {
   const postsSection = html.slice(
     html.indexOf('id="posts"'),
     html.indexOf('id="photos"'),
+  );
+  assert.ok(
+    postsSection.indexOf("my-first-internship") <
+      postsSection.indexOf("a-weekend-without-a-plan"),
   );
   assert.ok(
     postsSection.indexOf("a-weekend-without-a-plan") <
@@ -129,7 +133,7 @@ test("server-renders Qi Hao's personal corner", async () => {
   assert.match(html, /through SKAM France/);
   assert.match(html, /\.\/now\/skam-france-season-10\.jpg/);
   assert.match(html, /2 \(Manon\), 7 \(Tiffany\), and 10 \(Anaïs\)/);
-  assert.match(html, /music\.youtube\.com\/search\?q=silly\+boy\+blue\+the\+fight/);
+  assert.match(html, /youtube\.com\/watch\?v=Hj3SOCc2KzI/);
   assert.match(html, /https:\/\/www\.france\.tv\/slash\/skam-france\//);
   assert.match(html, /https:\/\/field-notes\.example\/og\.png/);
   assert.match(html, /name="application-name" content="Qihao Liang"/);
@@ -238,7 +242,7 @@ test("publishes the accidental ring as a photo post", async () => {
   const html = await response.text();
   assert.match(
     html,
-    /<title>The ring I bought for free delivery — Qihao<\/title>/i,
+    /<title>This women's item is also popular with men — Qihao<\/title>/i,
   );
   assert.match(html, /9 Aug 2026/);
   assert.match(html, /reach the minimum for free delivery/);
@@ -256,6 +260,20 @@ test("publishes the accidental ring as a photo post", async () => {
     /https:\/\/field-notes\.example\/posts\/new-ring\/portrait-with-ring\.jpg/,
   );
   assert.doesNotMatch(html, /https:\/\/field-notes\.example\/og\.png/);
+});
+
+test("publishes the Shopee internship farewell", async () => {
+  const response = await render("/posts/my-first-internship");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /<title>my first internship, wrapped! — Qihao<\/title>/i);
+  assert.match(html, /29 Sep 2026/);
+  assert.match(html, /very first internship/i);
+  assert.match(html, /friends from Ego/i);
+  assert.match(html, /shopee-office\.jpg/);
+  assert.match(html, /shopee-polaroid\.jpg/);
+  assert.match(html, /holding-the-polaroid\.jpg/);
 });
 
 test("keeps the finished site accessible and starter-free", async () => {

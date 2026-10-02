@@ -311,13 +311,13 @@ export default function Home() {
           <div className="hero-scrapbook" aria-label="A few things from Qihao's life">
             <a
               className="hero-tile hero-tile-main"
-              href="./posts/the-ring-i-bought-for-free-delivery"
+              href="./posts/my-first-internship"
             >
               <img
-                src="./posts/new-ring/ring-close-up-fixed.jpg"
-                alt="A shiny flower ring with pearly petals and a gold centre"
+                src="./posts/my-first-internship/shopee-polaroid.jpg"
+                alt="A Polaroid of Qihao in front of a large Shopee bag icon"
               />
-              <span><small>recent post</small>an accidental ring</span>
+              <span><small>recent post</small>my first internship, wrapped!</span>
             </a>
             <a className="hero-tile" href="./photos/leaves-in-a-pocket-of-light">
               <img
