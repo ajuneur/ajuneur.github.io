@@ -33,6 +33,8 @@ test("server-renders Qi Hao's personal corner", async () => {
   const html = await response.text();
   assert.match(html, /<title>Qihao Liang's Little ArXiv<\/title>/i);
   assert.match(html, /cheehao · made quietly in singapore · 2026/);
+  assert.match(html, /unwesternised way of carrying chinese sounds/);
+  assert.match(html, /proud to be ethnically chinese/);
   assert.match(html, /「/);
   assert.match(html, /」/);
   assert.match(html, /the mini arXiv of/);

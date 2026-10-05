@@ -190,7 +190,7 @@ export default function Home() {
             </div>
             <p className="pronunciation">
               pronounced <strong>chee hao</strong> -- "chee" as in cheese. though the wade-giles spelling is chi-hao, someone still pronounced it as "kai-hao" (sigh...)
-              i am also obsessed with zhuyin (ㄅㄆㄇㄈ), so i sometimes write my name as ㄑㄏ(my zhuyin initials).
+              i am also obsessed with zhuyin (ㄅㄆㄇㄈ). to me, it feels like an unwesternised way of carrying chinese sounds -- without having to pass them through the latin alphabet. i&apos;m proud to be ethnically chinese, and proud that i can understand the language, the culture, and all the little things carried inside them. that&apos;s why i sometimes write my name as ㄑㄏ (my zhuyin initials).
             </p>
             <figure className="about-portrait">
               <img
