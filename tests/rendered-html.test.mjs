@@ -34,7 +34,7 @@ test("server-renders Qi Hao's personal corner", async () => {
   assert.match(html, /<title>Qihao Liang's Little ArXiv<\/title>/i);
   assert.match(html, /cheehao · made quietly in singapore · 2026/);
   assert.match(html, /unwesternised way of carrying chinese sounds/);
-  assert.match(html, /proud to be ethnically chinese/);
+  assert.match(html, /proud of my chinese heritage/);
   assert.match(html, /href="https:\/\/en\.wikipedia\.org\/wiki\/Bopomofo"/);
   assert.match(html, /「/);
   assert.match(html, /」/);
