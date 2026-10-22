@@ -6,6 +6,7 @@ export type Post = {
   description: string;
   tag: string;
   note: string;
+  hidden?: boolean;
   body: Array<string | null>;
   images?: Array<{
     src: string;
@@ -14,7 +15,7 @@ export type Post = {
   }>;
 };
 
-export const posts: Post[] = [
+const allPosts: Post[] = [
   {
     slug: "my-first-internship",
     date: "29 Sep 2026",
@@ -50,6 +51,7 @@ export const posts: Post[] = [
   },
   {
     slug: "the-ring-i-bought-for-free-delivery",
+    hidden: true,
     date: "9 Aug 2026",
     title: "This women's item is also popular with men",
     excerpt:
@@ -159,6 +161,8 @@ export const posts: Post[] = [
     ],
   },
 ];
+
+export const posts = allPosts.filter((post) => !post.hidden);
 
 export function getPost(slug: string) {
   return posts.find((post) => post.slug === slug);
