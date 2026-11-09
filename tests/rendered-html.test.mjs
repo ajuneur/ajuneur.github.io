@@ -53,6 +53,10 @@ test("server-renders Qi Hao's personal corner", async () => {
   assert.doesNotMatch(html, /src="\.\/photos\/desk\.jpg"/);
   assert.match(html, /href="#posts">posts<\/a>/);
   assert.match(html, /recent posts/);
+  assert.match(html, /featured project/);
+  assert.match(html, /href="\.\/posts\/le-palais-imperial"/);
+  assert.match(html, /\.\/posts\/le-palais-imperial\/palace-cover\.jpg/);
+  assert.match(html, /explore the project →/);
   assert.match(html, /href="\.\/posts\/the-chapel-and-the-cliff"/);
   assert.match(html, /Craquelure/);
   assert.match(html, /read the dream →/);

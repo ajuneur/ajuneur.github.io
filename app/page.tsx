@@ -6,6 +6,12 @@ import { posts } from "./post-data";
 const orderedPosts = [...posts].sort(
   (a, b) => Date.parse(b.date) - Date.parse(a.date),
 );
+const featuredProject = orderedPosts.find(
+  (post) => post.slug === "le-palais-imperial",
+);
+const diaryPosts = orderedPosts.filter(
+  (post) => post.slug !== featuredProject?.slug,
+);
 
 const now = [
   {
@@ -345,8 +351,33 @@ export default function Home() {
             <p>nothing too serious -- just days i felt like keeping.</p>
           </div>
 
+          {featuredProject ? (
+            <a
+              className="featured-project"
+              href={`./posts/${featuredProject.slug}`}
+              aria-label={`Explore featured project: ${featuredProject.title}`}
+            >
+              <div className="featured-project-image">
+                <img
+                  src="./posts/le-palais-imperial/palace-cover.jpg"
+                  alt="Le Palais Impérial cover divided by a diagonal Palace Museum roofline"
+                />
+              </div>
+              <div className="featured-project-copy">
+                <p className="featured-project-label">featured project</p>
+                <div className="card-meta">
+                  <time>{featuredProject.date}</time>
+                  <span>{featuredProject.tag}</span>
+                </div>
+                <h3>{featuredProject.title}</h3>
+                <p>{featuredProject.excerpt}</p>
+                <span className="card-read">explore the project →</span>
+              </div>
+            </a>
+          ) : null}
+
           <div className="diary-grid">
-            {orderedPosts.map((entry) => (
+            {diaryPosts.map((entry) => (
               <a
                 className="diary-card"
                 href={`./posts/${entry.slug}`}
