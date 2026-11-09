@@ -1093,6 +1093,10 @@ footer > a {
   grid-column: 1 / -1;
 }
 
+.post-image-gallery figure.post-image-wide {
+  grid-column: 1 / -1;
+}
+
 .post-image-gallery figure:first-child img {
   height: min(105vw, 900px);
   object-position: center 64%;
@@ -1107,9 +1111,23 @@ footer > a {
   object-position: center;
 }
 
+.post-image-gallery img.post-image-contain {
+  height: auto;
+  background: #fff;
+  object-fit: contain;
+}
+
+.post-image-link {
+  display: block;
+}
+
 .post-image-gallery figure:nth-child(2) img,
 .post-image-gallery figure:nth-child(3) img {
   height: min(58vw, 580px);
+}
+
+.post-image-gallery figure.post-image-wide img {
+  height: auto;
 }
 
 .post-image-gallery figcaption {

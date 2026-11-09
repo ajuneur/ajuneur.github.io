@@ -236,6 +236,24 @@ test("publishes the mall-hopping weekend as its own post", async () => {
   assert.doesNotMatch(html, /og\.png/);
 });
 
+test("publishes the Palace Museum data visualisation project", async () => {
+  const response = await render("/posts/le-palais-imperial");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /<title>Le Palais Impérial — Qihao<\/title>/i);
+  assert.match(html, /18 Jan 2021/);
+  assert.match(html, /data visualisation/);
+  assert.match(html, /Palace Museum’s architecture and collections/);
+  assert.match(html, /cultural confidence/);
+  assert.match(html, /Living in Singapore for the past several years/);
+  assert.match(html, /figures and labels reflect the sources I used in 2021/);
+  assert.match(html, /palace-cover\.jpg/);
+  assert.match(html, /palace-visualisation\.jpg/);
+  assert.match(html, /post-image-contain/);
+  assert.doesNotMatch(html, /og\.png/);
+});
+
 test("keeps the accidental ring post temporarily unavailable", async () => {
   const response = await render("/posts/the-ring-i-bought-for-free-delivery");
   assert.equal(response.status, 404);

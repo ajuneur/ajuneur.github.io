@@ -92,12 +92,23 @@ export default async function PostPage({ params }: PostPageProps) {
         {post.images ? (
           <div className="post-image-gallery" aria-label="Photos from this post">
             {post.images.map((image, index) => (
-              <figure key={image.src}>
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  loading={index === 0 ? "eager" : "lazy"}
-                />
+              <figure
+                className={image.fit === "contain" ? "post-image-wide" : undefined}
+                key={image.src}
+              >
+                <a
+                  className="post-image-link"
+                  href={image.src}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className={image.fit === "contain" ? "post-image-contain" : undefined}
+                    loading={index === 0 ? "eager" : "lazy"}
+                  />
+                </a>
                 <figcaption>{image.caption}</figcaption>
               </figure>
             ))}

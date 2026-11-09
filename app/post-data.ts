@@ -12,6 +12,7 @@ export type Post = {
     src: string;
     alt: string;
     caption: string;
+    fit?: "cover" | "contain";
   }>;
 };
 
@@ -158,6 +159,39 @@ const allPosts: Post[] = [
       "This is, obviously, the perfect route for a guy who is basically allergic to ultraviolet exposure. While everyone above ground is negotiating heat, glare, and the possibility of becoming sunburnt, I can travel across a surprising portion of the city without having a serious encounter with the sun.",
       "There is no grand discovery at the end of this journey. Most of the pleasure comes from continuing to move without needing to arrive anywhere important: MRT, shops, bus, Funan, then the long underground drift across the city.",
       "So perhaps it is not really a weekend without a plan. It is more like a plan I have repeated so often that it no longer feels like one—a familiar little loop, performed mostly indoors, that lets the weekend pass at exactly the speed I want.",
+    ],
+  },
+  {
+    slug: "le-palais-imperial",
+    date: "18 Jan 2021",
+    title: "Le Palais Impérial",
+    excerpt:
+      "An undergraduate data-visualisation project about the Palace Museum, cultural memory, and what numbers choose to make visible.",
+    description:
+      "A 2021 data-visualisation project exploring how the Palace Museum’s architecture and collections can be made legible without losing their cultural setting.",
+    tag: "data visualisation",
+    note: "an undergraduate project from 2021, revisited with fresh eyes.",
+    body: [
+      "I made this project as an undergraduate, using data about the Palace Museum’s architecture, collections, historical periods, and public spaces to build one large visual narrative. I wanted the numbers to feel connected to a place rather than arranged like a neutral dashboard.",
+      "The visual language borrows from rooflines, architectural drawings, ink painting, porcelain, and the restrained colours of museum objects. Timelines, proportions, and collection sizes sit alongside buildings and decorative motifs, so the cultural setting is part of the explanation rather than an ornament added at the end.",
+      "My original rationale also wrestled with two unhelpful ways of approaching heritage: dismissing one’s own culture in favour of something supposedly more modern, or praising it so uncritically that it becomes closed to questions. I was trying to find a more curious position between them—one grounded in cultural confidence, but still open, critical, and willing to learn.",
+      "The subject here is Chinese heritage, which I know through my own background. But I think the habit behind it travels: learning the context, respecting what matters to a community, and resisting the urge to turn culture into decoration. Living in Singapore for the past several years has made me more alert to how heritage is carried across languages, communities, and everyday places.",
+      "That is the part of the project I still care about most. Data can clarify scale and pattern, but visualisation also decides what receives attention, what remains in the background, and how viewers are invited to look.",
+      "The infographic is shown here as an archival student work. Its figures and labels reflect the sources I used in 2021 rather than current Palace Museum statistics.",
+    ],
+    images: [
+      {
+        src: "/posts/le-palais-imperial/palace-cover.jpg",
+        alt: "Black-and-white cover design for Le Palais Impérial, divided by a diagonal Palace Museum roofline",
+        caption: "the cover: architectural lines meeting traditional decorative motifs.",
+        fit: "contain",
+      },
+      {
+        src: "/posts/le-palais-imperial/palace-visualisation.jpg",
+        alt: "A wide infographic combining Palace Museum architecture, collection figures, timelines, and cultural motifs",
+        caption: "the full visualisation—open it in a new tab if you would like to explore the details.",
+        fit: "contain",
+      },
     ],
   },
 ];
