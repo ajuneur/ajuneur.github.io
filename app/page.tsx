@@ -359,7 +359,7 @@ export default function Home() {
             >
               <div className="featured-project-image">
                 <img
-                  src="./posts/le-palais-imperial/palace-cover.jpg"
+                  src="./posts/le-palais-imperial/palace-cover-tight.jpg"
                   alt="Le Palais Impérial cover divided by a diagonal Palace Museum roofline"
                 />
               </div>

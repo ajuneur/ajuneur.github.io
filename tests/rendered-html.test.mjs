@@ -55,7 +55,7 @@ test("server-renders Qi Hao's personal corner", async () => {
   assert.match(html, /recent posts/);
   assert.match(html, /featured project/);
   assert.match(html, /href="\.\/posts\/le-palais-imperial"/);
-  assert.match(html, /\.\/posts\/le-palais-imperial\/palace-cover\.jpg/);
+  assert.match(html, /\.\/posts\/le-palais-imperial\/palace-cover-tight\.jpg/);
   assert.match(html, /explore the project →/);
   assert.match(html, /href="\.\/posts\/the-chapel-and-the-cliff"/);
   assert.match(html, /Craquelure/);
@@ -252,7 +252,7 @@ test("publishes the Palace Museum data visualisation project", async () => {
   assert.match(html, /cultural confidence/);
   assert.match(html, /Living in Singapore for the past several years/);
   assert.match(html, /figures and labels reflect the sources I used in 2021/);
-  assert.match(html, /palace-cover\.jpg/);
+  assert.match(html, /palace-cover-tight\.jpg/);
   assert.match(html, /palace-visualisation\.jpg/);
   assert.match(html, /post-image-contain/);
   assert.doesNotMatch(html, /og\.png/);

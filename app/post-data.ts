@@ -181,7 +181,7 @@ const allPosts: Post[] = [
     ],
     images: [
       {
-        src: "/posts/le-palais-imperial/palace-cover.jpg",
+        src: "/posts/le-palais-imperial/palace-cover-tight.jpg",
         alt: "Black-and-white cover design for Le Palais Impérial, divided by a diagonal Palace Museum roofline",
         caption: "the cover: architectural lines meeting traditional decorative motifs.",
         fit: "contain",
